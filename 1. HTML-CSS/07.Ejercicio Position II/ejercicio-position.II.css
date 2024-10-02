@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+    position: sticky;
+
+    bottom: 150px;
+    background-color: lightskyblue;
+  }
+  .etiqueta{
+
+    position: fixed;
+    top: 50px;
+    left: 600px;
+    height: 20px;
+    width: 50px;
+    background-color: lightpink;
+  }

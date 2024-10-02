@@ -1,0 +1,10 @@
+.div1 {
+    background-color: lightpink;
+    float: right;
+    padding: 100px;
+}
+.div2{
+    background-color: aqua;
+    float: left;
+   padding: 100px;
+}

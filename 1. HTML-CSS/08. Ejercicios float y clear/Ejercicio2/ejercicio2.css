@@ -17,3 +17,8 @@
     float: left;
     font-weight: bold;
 }
+.clearfix::after{
+    clear: both;
+     display: table;
+     content: "";
+ }

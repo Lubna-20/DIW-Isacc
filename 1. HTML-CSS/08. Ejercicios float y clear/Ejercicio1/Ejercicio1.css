@@ -10,3 +10,8 @@
     padding: 100px;
     font-weight: bold;
 }
+.clearfix::after{
+   clear: both;
+    display: table;
+    content: "";
+}

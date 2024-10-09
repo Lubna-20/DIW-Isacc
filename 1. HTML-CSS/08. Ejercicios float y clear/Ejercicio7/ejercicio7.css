@@ -9,11 +9,13 @@ header{
 
 footer{
     background-color:lightslategray;
+    clear: both;
     padding: 10px; 
     color: white;  
 }
 div{
     background-color:rgb(86, 167, 221);
+    
     padding: 10px;
     margin: 10px;
     

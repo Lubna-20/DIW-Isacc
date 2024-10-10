@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+nav {
+  background-color: gray;
+}
+nav * {
+  padding: 10px;
+  color: white;
+}
+nav *:hover {
+  background-color: red;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}

@@ -1,29 +1,24 @@
 * {
-    box-sizing: border-box;
-  }
-footer{
-    background-color:lightslategray;
-    clear: both;
-    padding: 20px; 
-    color: white;  
+  box-sizing: border-box;
 }
-article{
-    block-size: auto;
-    float: left;
-    margin: 10px;
+footer {
+  background-color: lightslategray;
+  clear: both;
+  padding: 20px;
+  color: white;
 }
-img{
-    display: block;
-    
-    
+article {
+  float: left;
+  margin: 20px;
+  
 }
 
-p{
-   
-    clear: both;
+p {
+  clear: both;
 }
 
-.parrafo{
+.parrafo {
   float: right;
-    clear: both;
+  clear: both;
 }
+

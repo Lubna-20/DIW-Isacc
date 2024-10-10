@@ -15,17 +15,17 @@ footer{
 }
 div{
     background-color:rgb(86, 167, 221);
-    
     padding: 10px;
     margin: 10px;
     
 }
 nav{
-    padding-top:10px;
+    
     float: left;
-
+    width: 20%;
 }
 article{
+    width: 80%;
    padding: 20px;
-   
+   overflow: hidden;
 }

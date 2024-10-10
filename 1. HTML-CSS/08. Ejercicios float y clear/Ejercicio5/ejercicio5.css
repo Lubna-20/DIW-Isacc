@@ -1,35 +1,36 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.div1{
-    background-color:aqua;
-    float: left;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    font-weight: bold;
+.div1 {
+  background-color: aqua;
+  float: left;
+  padding: 20px;
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
 }
-.div2{
-    background-color: beige;
-    float: left;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    font-weight: bold;
+.div2 {
+  background-color: beige;
+  float: left;
+  padding: 20px;
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
 }
-.div3{
-    background-color: salmon;
-    float: left;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    font-weight: bold;
+.div3 {
+  background-color: salmon;
+  float: left;
+  padding: 20px;
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
 }
-.div4{
-    background-color: magenta;
-    padding: 20px;
-    float: left;
-    width: 25%;
-    text-align: center;
-    font-weight: bold;
+.div4 {
+  background-color: magenta;
+  padding: 20px;
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
 }
+

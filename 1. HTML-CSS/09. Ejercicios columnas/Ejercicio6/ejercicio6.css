@@ -1,0 +1,16 @@
+img {
+    width: 20%;
+  }
+
+  .col-6 {
+    float: right;
+    background-color: aqua;
+    width: 80%;
+    padding: 0px 15px; 
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

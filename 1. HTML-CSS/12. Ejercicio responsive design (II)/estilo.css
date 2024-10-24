@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: lightpink;
+  padding: 20px;
+ 
+}
+
+aside {
+  background-color: lightblue;
+  padding: 20px;
+ 
+}
+
+article {
+  background-color: lightgreen;
+  padding: 20px;
+ 
+}
+
+footer {
+  background-color: darkgray;
+  padding: 20px;
+ 
+}

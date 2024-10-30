@@ -22,7 +22,7 @@ code {
 
 .inline-block-box {
   display: inline-block;
-  border: 2px solid rgb(43, 49, 43);
+  border: 2px solid green;
   padding: 15px;
   /* Observa cómo las propiedades height y width sí tienen efecto */
   width: 100px;

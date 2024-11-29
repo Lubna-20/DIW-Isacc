@@ -1,0 +1,47 @@
+:root {
+  --header-bg: gray;
+  --header-color: white;
+}
+* {
+  box-sizing: border-box;
+}
+header {
+  text-align: center;
+}
+
+.imgGrande {
+  width: 100%;
+  object-fit: cover;
+}
+article {
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.caja1 {
+  background-color: pink;
+}
+.caja2 {
+  background-color: lightblue;
+}
+.caja3 {
+  background-color: lightgreen;
+}
+.caja4 {
+  background-color: beige;
+}
+.imgdiv {
+  width: 100%;
+  aspect-ratio: 6 / 4;
+  object-fit: cover;
+}
+h2 {
+  border-bottom: 2px solid black;
+  padding: 2px;
+}
+.sonrie {
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  float: right;
+
+}

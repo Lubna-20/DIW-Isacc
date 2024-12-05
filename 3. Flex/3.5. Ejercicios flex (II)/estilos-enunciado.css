@@ -2,6 +2,8 @@ div {
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid black;
+  display: flex;
+  column-gap: 10px;
 }
 
 #container-ppal {
@@ -16,6 +18,7 @@ div {
   width: 20%;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 #container-izq-1 {
   align-self: center;
@@ -30,7 +33,7 @@ div {
 #container-izq #container-izq-2 {
   border-width: 0px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 #container-izq #container-izq-3 {
@@ -46,9 +49,7 @@ div {
 #container-izq #container-izq-5 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 11px;
-  gap: 24px;
+  gap: 10px;
 }
 
 #container-izq #container-izq-6 {
@@ -74,12 +75,15 @@ div {
   border: 4px solid green;
   width: 50%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #container-centro #container-centro-1 {
   height: 100px;
   border-width: 0px;
   display: flex;
+  justify-content: space-between;
 }
 
 #container-centro #container-centro-2 {
@@ -92,9 +96,7 @@ div {
 #container-centro #container-centro-3 {
   border: 0px;
   display: flex;
-  align-content: flex-end;
-  flex-wrap: wrap;
-  align-items: stretch;
+  flex-direction: row-reverse;
 }
 
 #container-centro #container-centro-4 {
@@ -105,6 +107,7 @@ div {
 #container-centro #container-centro-5 {
   width: 50px;
   height: 50px;
+  align-self: flex-end;
 }
 
 #container-centro #container-centro-6 {
@@ -114,12 +117,15 @@ div {
 #container-centro #container-centro-7 {
   width: 50px;
   height: 50px;
+  align-self: center;
+
 }
 
 #container-centro #container-centro-8 {
   width: 50px;
   height: 50px;
   background-color: lightcoral;
+  flex-grow: 1;
 }
 
 #container-centro #container-centro-9 {
@@ -134,21 +140,20 @@ div {
   width: 30%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: space-around;
-  flex-direction: column-reverse;
+ justify-content: space-around;
 }
 
 #container-dcha #container-dcha-1 {
   height: 50px;
   background-color: lightblue;
-  display: flex;
+order: 3;
 }
 
 #container-dcha #container-dcha-2 {
   background-color: lightcoral;
   border: 0px;
   display: flex;
+  justify-content: space-around;
 }
 
 #container-dcha #container-dcha-3 {
@@ -156,6 +161,8 @@ div {
   height: 50px;
   border: 0px;
   display: flex;
+
+  justify-content: space-evenly;
 }
 
 #container-dcha #container-dcha-4 {
@@ -169,7 +176,9 @@ div {
 }
 
 #container-dcha #container-dcha-6 {
+  flex-grow: 1;
 }
 
 #container-dcha #container-dcha-7 {
+  flex-grow: 1;
 }

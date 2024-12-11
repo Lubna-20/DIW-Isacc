@@ -1,0 +1,235 @@
+/*********************************/
+/********** Ejercicio 1 **********/
+/*********************************/
+/* .ej1 establece la dirección de los elementos en fila inversa y los alinea al final del contenedor */
+.ej1 {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  
+  /* El primer hijo de .ej1 no puede reducir su tamaño más allá del contenido */
+  .ej1 :nth-child(1) {
+    flex-shrink: 0;
+  }
+  
+  /* Estilos vacíos para otros hijos de .ej1 (pueden ser utilizados para agregar estilos específicos si es necesario) */
+  .ej1 :nth-child(2) {
+  }
+  
+  .ej1 :nth-child(3) {
+  }
+  
+  .ej1 :nth-child(4) {
+  }
+  
+  .ej1 :nth-child(5) {
+  }
+  
+  /*********************************/
+  /********** Ejercicio 2 **********/
+  /*********************************/
+  /* .ej2 alinea su contenido al centro y permite el ajuste de sus elementos en varias filas */
+  .ej2 {
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* El primer hijo de .ej2 se ordena primero */
+  .ej2 :nth-child(1) {
+    order: 1;
+  }
+  
+  /* Estilos vacíos para otros hijos de .ej2, excepto el quinto hijo */
+  .ej2 :nth-child(2) {
+  }
+  
+  /* El quinto hijo de .ej2 se ordena cuarto */
+  .ej2 :nth-child(3) {
+  }
+  
+  .ej2 :nth-child(4) {
+  }
+  
+  .ej2 :nth-child(5) {
+    order: 4;
+  }
+  
+  /*********************************/
+  /********** Ejercicio 3 **********/
+  /*********************************/
+  /* .ej3 organiza sus elementos en una columna invertida y los alinea al final del contenedor */
+  .ej3 {
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+  
+  /* Estilos vacíos para hijos de .ej3, excepto el tercer hijo */
+  .ej3 :nth-child(1) {
+  }
+  
+  .ej3 :nth-child(2) {
+  }
+  
+  /* El tercer hijo de .ej3 se alinea al centro del contenedor */
+  .ej3 :nth-child(3) {
+    align-self: center;
+  }
+  
+  .ej3 :nth-child(4) {
+  }
+  
+  .ej3 :nth-child(5) {
+  }
+  
+  /*********************************/
+  /********** Ejercicio 4 **********/
+  /*********************************/
+  /* .ej4 alinea sus elementos al centro del contenedor */
+  .ej4 {
+    align-items: center;
+  }
+  
+  /* El primer hijo de .ej4 crece para llenar el espacio disponible */
+  .ej4 :nth-child(1) {
+    flex-grow: 1;
+  }
+  
+  /* El tercer hijo de .ej4 se alinea al final del contenedor y crece tres veces más que los otros elementos */
+  .ej4 :nth-child(2) {
+  }
+  
+  .ej4 :nth-child(3) {
+    align-self: flex-end;
+    flex-grow: 3;
+  }
+  
+  /* El cuarto y quinto hijo de .ej4 no se muestran */
+  .ej4 :nth-child(4) {
+    display: none;
+  }
+  
+  .ej4 :nth-child(5) {
+    display: none;
+  }
+  
+  /*********************************/
+  /********** Ejercicio 5 **********/
+  /*********************************/
+  /* .ej5 distribuye sus elementos uniformemente con espacio alrededor */
+  .ej5 {
+    justify-content: space-around;
+  }
+  
+  /* El segundo hijo de .ej5 tiene una altura automática */
+  .ej5 :nth-child(1) {
+  }
+  
+  .ej5 :nth-child(2) {
+    height: auto;
+  }
+  
+  /* El cuarto y quinto hijo de .ej5 no se muestran */
+  .ej5 :nth-child(3) {
+  }
+  
+  .ej5 :nth-child(4) {
+    display: none;
+  }
+  
+  .ej5 :nth-child(5) {
+    display: none;
+  }
+  
+  /*********************************/
+  /********** Ejercicio 6 **********/
+  /*********************************/
+  /* .ej6 alinea sus elementos al final del contenedor */
+  .ej6 {
+    align-items: flex-end;
+  }
+  
+  /* El primer hijo de .ej6 tiene un margen a la derecha automático */
+  .ej6 :nth-child(1) {
+    margin-right: auto;
+  }
+  
+  /* El tercer hijo de .ej6 se alinea al final del contenedor */
+  .ej6 :nth-child(2) {
+  }
+  
+  .ej6 :nth-child(3) {
+    align-self: flex-end;
+  }
+  
+  /* El cuarto y quinto hijo de .ej6 no se muestran */
+  .ej6 :nth-child(4) {
+    display: none;
+  }
+  
+  .ej6 :nth-child(5) {
+    display: none;
+  }
+  
+  /*********************************/
+  /********** Ejercicio 7 **********/
+  /*********************************/
+  /* .ej7 organiza sus elementos en una columna */
+  .ej7 {
+    flex-direction: column;
+  }
+  
+  /* El primer hijo de .ej7 se alinea al final del contenedor */
+  .ej7 :nth-child(1) {
+    align-self: flex-end;
+  }
+  
+  /* El segundo hijo de .ej7 tiene un ancho automático */
+  .ej7 :nth-child(2) {
+    width: auto;
+  }
+  
+  /* El tercer hijo de .ej7 se alinea al centro del contenedor */
+  .ej7 :nth-child(3) {
+    align-self: center;
+  }
+  
+  /* El cuarto y quinto hijo de .ej7 no se muestran */
+  .ej7 :nth-child(4) {
+    display: none;
+  }
+  
+  .ej7 :nth-child(5) {
+    display: none;
+  }
+  
+  /*********************************/
+  /********** Ejercicio 8 **********/
+  /*********************************/
+  /* .ej8 permite el ajuste de sus elementos en varias filas y establece un espacio de columna de 20px */
+  .ej8 {
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+  
+  /* Los primeros tres hijos de .ej8 crecen para llenar el espacio disponible */
+  .ej8 :nth-child(1) {
+    flex-grow: 1;
+  }
+  
+  .ej8 :nth-child(2) {
+    flex-grow: 1;
+  }
+  
+  .ej8 :nth-child(3) {
+    flex-grow: 1;
+  }
+  
+  /* El cuarto y quinto hijo de .ej8 no se muestran */
+  .ej8 :nth-child(4) {
+    display: none;
+  }
+  
+  .ej8 :nth-child(5) {
+    display: none;
+  }
+  

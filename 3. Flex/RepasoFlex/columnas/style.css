@@ -1,0 +1,106 @@
+/* styles.css */
+
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .navbar {
+    background: #444;
+    color: white;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex; /* Flex container */
+    justify-content: space-around; /* Distribuir los elementos equitativamente */
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    padding: 5px 10px;
+  }
+  
+  .main-content {
+    display: flex; /* Flex container */
+    flex-direction: row; /* Dirección de las columnas */
+    justify-content: space-between; /* Distribuir el espacio entre columnas */
+    align-items: stretch; /* Estirar columnas para llenar el contenedor */
+    padding: 20px;
+  }
+  
+  .column {
+    flex: 1; /* Cada columna toma el mismo espacio */
+    padding: 10px;
+    margin: 0 10px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  .additional-content {
+    padding: 20px;
+    background: #eee;
+    text-align: center;
+  }
+  
+  .additional-content .sub-section {
+    display: flex; /* Flex container */
+    justify-content: space-around; /* Distribuir los elementos equitativamente */
+    margin-top: 20px;
+  }
+  
+  .additional-content .sub-item {
+    flex: 1; /* Cada sub-elemento toma el mismo espacio */
+    padding: 10px;
+    margin: 0 10px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .articles {
+    padding: 20px;
+  }
+  
+  .articles .article {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  
+  .footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column; /* Cambiar a dirección de columna en pantallas pequeñas */
+    }
+    .column {
+      margin: 10px 0; /* Ajustar el margen para columnas en pantallas pequeñas */
+    }
+    .additional-content .sub-section {
+      flex-direction: column; /* Cambiar a dirección de columna en pantallas pequeñas */
+    }
+    .additional-content .sub-item {
+      margin: 10px 0; /* Ajustar el margen para sub-elementos en pantallas pequeñas */
+    }
+  }
+  

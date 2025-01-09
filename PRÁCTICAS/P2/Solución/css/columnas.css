@@ -1,24 +1,18 @@
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 /* For mobile phones: */
 [class*="col-"] {
-
   width: 100%;
   padding: 15px;
   flex: 0 0 auto;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
 }
-
-.d-d-block { 
-  display: none;
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
 }
 
 form.contact-form [class*="col-"] {

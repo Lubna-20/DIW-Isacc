@@ -1,0 +1,65 @@
+/*********************************/
+/********** Ejercicio 1 **********/
+/*********************************/
+.ej1 {
+    align-items: end; 
+    flex-direction: row-reverse;
+    flex-basis: min-content;
+}
+
+.ej1 :nth-child(1) {
+    flex-basis: min-content;
+}
+
+.ej1 :nth-child(2) {
+    flex-grow: 1;
+}
+
+.ej1 :nth-child(3) {
+align-self: center;
+flex-basis: min-content;
+
+}
+
+/*********************************/
+/********** Ejercicio 2 **********/
+/*********************************/
+.ej2 {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.ej2 :nth-child(1) {
+    align-content: space-around;
+    
+
+
+}
+
+.ej2 :nth-child(2) {
+    align-self: center;
+}
+
+.ej2 :nth-child(3) {
+    
+}
+
+/*********************************/
+/********** Ejercicio 3 **********/
+/*********************************/
+.ej3 {
+    flex-direction: column;
+}
+
+.ej3 :nth-child(1) {
+    flex-grow: 1;
+}
+
+.ej3 :nth-child(2) {
+}
+
+.ej3 :nth-child(3) {
+   align-self: flex-end;
+
+}

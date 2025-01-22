@@ -21,54 +21,7 @@
     <div class="div4">Div4</div>
   </div>
 
-  <div class="explanation">
-    <p><strong>Explicación:</strong></p>
-
-    <p>Hay que añadir <code>flex-grow: 1</code> a cada item para que se estiren todos por igual.</p>
-
-    <p>Podrías pensar en poner <code>flex-basis: 25%</code> pero eso solo funcionaría para 4 elementos, mientras que <code>flex-grow: 1</code> funciona para cualquier número de elementos.</p>
-
-    <p>Fíjate lo que ocurre si pones <code>flex-basis: 30%</code> a los items. ¿Por qué no se desbordan si suman 120%?</p>
-
-    <p class="link" onclick="toggleExplanation()">Pincha aquí para leer la respuesta.</p>
-
-    <div class="reveal" id="reveal">
-      <p>El motivo por el que parece que no afecta a los items que se les indique un porcentaje mayor es que flex les obliga a encogerse por defecto, con <code>flex-shrink: 1</code>. Prueba a poner <code>flex-shrink: 0</code>.</p>
-    </div>
-
-  </div>
-
-  <style>
-    #reveal {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-
-    #reveal.open {
-      max-height: 200px;
-    }
-
-    .link {
-      color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  </style>
-
-  <script>
-    function toggleExplanation() {
-      const explanation = document.getElementById('reveal');
-      explanation.classList.toggle('open');
-    }
-  </script>
-
-  <!-- highlight.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>hljs.highlightAll();</script>
-
-  <!-- Función para copiar el contenido del pre tag -->
-  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+  
 </body>
 
 </html>

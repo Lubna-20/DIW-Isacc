@@ -1,13 +1,13 @@
 #container {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
 }
 
 #container div {
   padding: 20px;
   text-align: center;
   font-weight: bold;
-  box-sizing: border-box;
-  flex-grow: 1;
+ 
 }
 
 .div1 {

@@ -1,12 +1,14 @@
 #container {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content min-content min-content;
 }
 
 .div1 {
   padding: 50px;
   background-color: pink;
-  order: 1;
-  margin-left: auto;
+  order: 3;
+  
+
 }
 
 .div2 {
@@ -23,5 +25,5 @@ code {
   font-size: 90%;
   background-color: lightgrey;
   padding: 2px 5px;
-  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
 }

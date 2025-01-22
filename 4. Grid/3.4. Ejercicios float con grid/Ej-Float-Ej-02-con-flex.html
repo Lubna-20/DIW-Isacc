@@ -19,42 +19,7 @@
     <div class="div3">Div3</div>
   </div>
 
-  <div class="explanation">
-    <p><strong>Explicación:</strong></p>
-
-    <p>Hay varias maneras de hacer esto. Probablemente la más sencilla poner al Div1 <code>order: 1</code> para que se sitúe al final y <code>margin-left: auto</code> para separar al elemento de los demás.</p>
-
-    <p>Otra forma de hacerlo, más fea pero válida, sería con un contenedor interior:</p>
-
-    <u>HTML:</u>
-
-    <pre><code class="language-html">&lt;div id=&quot;container&quot;&gt;
-  &lt;div class=&quot;div1&quot;&gt;Div1&lt;/div&gt;
-  &lt;div id=&quot;container-interior&quot;&gt;
-    &lt;div class=&quot;div2&quot;&gt;Div2&lt;/div&gt;
-    &lt;div class=&quot;div3&quot;&gt;Div3&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-  </code></pre>
-
-    <u>CSS:</u>
-    <pre><code class="language-css">#container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-
-#container-interior {
-  display: flex;
-}</code></pre>
-  </div>
-
-  <!-- highlight.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>hljs.highlightAll();</script>
-
-  <!-- Función para copiar el contenido del pre tag -->
-  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+  
 </body>
 
 </html>

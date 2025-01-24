@@ -8,13 +8,73 @@
     <style></style>
   </head>
   <body>
-    <div id="container">Hola jQuery</div>
+    <input id="mi-boton" type="button" value="Enviar" />
 
+    <input type="text" id="textbox"> 
     <script>
-        $(document).ready(function () {
-            
+      /** $(document).ready(function () {
+        $("#mi-boton").click(boton_click);
+      });
+
+      function boton_click() {
+        alert("Has pulsado el botón");
+      }
+      // TODO hola
+      // ! DFGHJKLÑ`ÑPL,KMN
+
+      //FUNCION ANONIMA
+      $(document).ready(function () {
+        $("#mi-boton").click(() => {
+          alert("Has pulsado el botón");
         });
-        
+      });
+
+      $("#mi-boton").on("click", function(){
+        alert("HAS PULSADO EL BOTON")
+      });
+
+
+      $("#mi-boton").on("mouse", function(){
+        alert("HAS PULSADO EL BOTON")
+      });*/
+
+      /** $(document).ready(function () {
+        $("#mi-boton").on(
+          "mouseenter",
+          {
+            nombre: "Juan",
+          },
+          saludo
+        );
+
+        $("#mi-boton").on(
+          "mouseleave",
+          {
+            nombre: "María",
+          },
+          saludo
+        );
+      });
+
+      function saludo(event) {
+        console.log("Hola " + event.data.nombre);
+      }*/
+
+     /** $(document).ready(function () {
+        $("#mi-boton").on("click", function (event) {
+          console.log("Tipo de evento:", event.type);
+          console.log("Posición del mouse X:", event.pageX);
+          console.log("Posición del mouse Y:", event.pageY);
+        });
+      });*/
+      $(document).ready(function () { 
+    $("#textbox").on("keydown", function () { 
+      console.log("keydown event"); 
+    }); 
+    $("#textbox").on("keyup", function () { 
+      console.log("keyup event"); 
+    }); 
+  });
     </script>
   </body>
 </html>

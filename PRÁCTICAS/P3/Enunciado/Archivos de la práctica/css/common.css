@@ -30,12 +30,19 @@ header {
   background-color: var(--color-dark);
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: grid;
 }
 
 nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
 }
 
 .logo-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 60px 1fr;
 }
 
 .logo {
@@ -53,6 +60,11 @@ nav {
 
 nav ul {
   list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-items: center;
+
 }
 
 nav ul li a {
@@ -78,6 +90,8 @@ footer {
 }
 
 .footer-grid {
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .footer-section h3 {

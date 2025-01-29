@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/5. jQuery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>Crea el código jQuery para que se muestre 
+        por consola la posición del scroll cuando se haga scroll vertical.</p>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                console.log($(window).scrollTop());
+            })
+
+        });
+    </script>
+</body>
+</html>

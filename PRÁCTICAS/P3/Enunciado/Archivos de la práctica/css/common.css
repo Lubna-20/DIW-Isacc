@@ -88,10 +88,15 @@ footer {
   color: var(--color-white);
   padding: 2rem;
 }
+/**
+*  en el footer se ha utilizado grid para distribuir los elemenro
 
+
+*/
 .footer-grid {
   display: grid;
   grid-auto-flow: column;
+  justify-content: space-between;
 }
 
 .footer-section h3 {

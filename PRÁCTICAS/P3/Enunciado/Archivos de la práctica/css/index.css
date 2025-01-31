@@ -1,11 +1,11 @@
 main {
   padding: 2rem;
   display: grid;
-
 }
 
 .grid-index-container {
   display: grid;
+
   
 }
 
@@ -46,7 +46,8 @@ main {
   background-color: var(--color-light);
   padding: 2rem;
   color: var(--color-dark);
-
+  display: grid;
+  
 }
 
 .sidebar h2 {

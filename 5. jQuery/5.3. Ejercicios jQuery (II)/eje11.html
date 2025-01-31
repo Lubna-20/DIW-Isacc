@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <select id="brands">
+      <option value="audi">Audi</option>
+      <option value="bmw">BMW</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="hyundai">Hyundai</option>
+    </select>
+    <div id="resultado"></div>
+    <script>
+      /*Crea  el  código  jQuery  que  inserte  dinámicamente  en  el  div  con  id 
+resultado un mensaje con la opción seleccionada por el usuario en el siguiente 
+select:*/
+      $("#brands").change(function () {
+        $("#resultado").text("Has seleccionado: " + $(this).val());
+      });
+    </script>
+  </body>
+</html>

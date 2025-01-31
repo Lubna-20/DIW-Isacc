@@ -20,7 +20,7 @@
 
       a.nav-item:hover,
       a.active {
-        background-color: red;
+        background-color: rgb(68, 0, 255);
       }
     </style>
     <!-- Crea el código jQuery a partir del siguiente HTML/CSS, 
@@ -34,11 +34,14 @@
       <a class="nav-item" href="#">Contacto</a>
     </nav>
     <script>
-        $(document).ready(function () {
-            $("#navbar").on('click', function(){
-                
-            })
+      // Añade el código jQuery para que cuando se haga clic en un ítem, 
+      // se le añada la clase active y se le quite al que lo tuviera antes.
+      $(document).ready(function () {
+        $(".nav-item").click(function () {
+          $(".nav-item").removeClass("active");
+          $(this).addClass("active");
         });
+      });
     </script>
   </body>
 </html>

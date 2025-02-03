@@ -19,8 +19,10 @@
 resultado un mensaje con la opción seleccionada por el usuario en el siguiente 
 select:*/
       $("#brands").change(function () {
-        $("#resultado").text("Has seleccionado: " + $(this).val());
+        $("#resultado").before("<li>Has seleccionado: " + $(this).val() + "<li>");
+        /*$("#resultado").text("Has seleccionado: " + $(this).val());*/
       });
     </script>
   </body>
 </html>
+

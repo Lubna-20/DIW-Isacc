@@ -91,9 +91,8 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-  gap: 20px;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, auto); /* !! Tres columnas iguales */
+  justify-content: space-around;
 }
 
 @media (max-width: 600px) {

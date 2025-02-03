@@ -1,8 +1,5 @@
 .grid-models-container {
-  display: grid;
-  grid-template-columns: 300px 1fr; /* Aside y main */
-  gap: 20px;
-  padding: 2rem
+
 }
 @media (max-width: 1000px) {
   .grid-models-container {
@@ -24,7 +21,7 @@
   display: grid;
   gap: 10px;
 }
-@media (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 900px) {
   .filter-sidebar form {
     grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
   }

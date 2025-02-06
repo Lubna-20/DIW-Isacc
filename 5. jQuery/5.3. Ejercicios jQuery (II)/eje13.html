@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <input type="button" value="Actualizar" id="refresh" />
+    <div id="respuesta"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#refresh").click(function () {
+      
+          $.ajax({
+            url: "coches.json",
+            type: "GET",
+            success: function (data) {
+               
+              let ol = $("<ol>");
+              //meterlo en el div
+              $("#respuesta").append(ol);
+
+              // meterlo en el ol
+              $(data).each(function (i, coche) {
+                let ol2 = $("<ol>");
+                let li = $("<li>");
+                li.text(coche.marca).appendTo(ol);
+                $(coche.coches).each(function (i, coche2) {
+                  let li2 = $("<li>");
+                  console.log(coche2.modelo, coche2.color, coche2.precio);
+                  li2
+                    .text(
+                      coche2.modelo +
+                        " , " +
+                        coche2.color +
+                        " , " +
+                        coche2.precio
+                    )
+                    .appendTo(ol2);
+                });
+                ol.append(ol2);
+              });
+            },
+           
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

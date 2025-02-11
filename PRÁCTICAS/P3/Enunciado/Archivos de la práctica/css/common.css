@@ -96,8 +96,8 @@ footer {
 */
 .footer-grid {
   display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, auto); /* !! Tres columnas iguales */
+  justify-content: space-around;
 }
 
 .footer-section h3 {
@@ -108,7 +108,15 @@ footer {
   border-bottom: 2px solid var(--color-medium);
   padding-bottom: 0.5rem;
 }
+@media (max-width: 600px) {
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+  }
 
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
 .footer-section ul {
   list-style-type: none;
 }

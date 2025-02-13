@@ -1,0 +1,139 @@
+/* Estilos base para el cuerpo de la página */
+body {
+  margin: 0; /* Elimina el margen predeterminado del body */
+  font-family: Arial, sans-serif; /* Fuente predeterminada */
+}
+
+/* Contenedor principal que usa CSS Grid */
+.contenedor {
+  display: grid; /* Activa el modo Grid */
+  grid-template-columns: 200px 1fr 1fr; /* Define 3 columnas: sidebar fijo de 200px y dos columnas flexibles */
+  grid-template-rows: 100px 1fr 1fr 100px; /* Define 4 filas: header y footer fijos, dos filas flexibles para el contenido */
+  grid-template-areas:
+    "header header header" /* Header ocupa toda la primera fila */
+    "sidebar main main" /* Sidebar en la primera columna, main ocupa dos columnas */
+    "sidebar section1 section2" /* Sidebar en la primera columna, section1 y section2 en las otras dos */
+    "footer footer footer"; /* Footer ocupa toda la última fila */
+  gap: 10px; /* Espacio entre las áreas del grid */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 10px; /* Espaciado interno */
+}
+
+/* Estilos para el header */
+.header {
+  grid-area: header; /* Asigna este elemento al área "header" */
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.5em; /* Tamaño de la fuente */
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  justify-content: space-between; /* Espacio entre el título y el menú */
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Estilos para el sidebar */
+.sidebar {
+  grid-area: sidebar; /* Asigna este elemento al área "sidebar" */
+  background-color: #333; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Estilos para el contenido principal */
+.main {
+  grid-area: main; /* Asigna este elemento al área "main" */
+  background-color: #f4f4f4; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Estilos para la galería dentro del main */
+.galeria {
+  display: grid; /* Activa el modo Grid para la galería */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Crea columnas flexibles con un mínimo de 150px */
+  gap: 10px; /* Espacio entre las imágenes */
+  margin-top: 20px; /* Margen superior */
+}
+
+/* Estilos para las imágenes de la galería */
+.galeria img {
+  width: 100%; /* Ancho completo del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para la sección 1 */
+.section1 {
+  grid-area: section1; /* Asigna este elemento al área "section1" */
+  background-color: #ff9800; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Estilos para la sección 2 */
+.section2 {
+  grid-area: section2; /* Asigna este elemento al área "section2" */
+  background-color: #e91e63; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Estilos para la sección 3 (oculta por defecto) */
+.section3 {
+  display: none; /* Oculta esta sección por defecto */
+  background-color: #9c27b0; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.2em; /* Tamaño de la fuente */
+}
+
+/* Estilos para el footer */
+.footer {
+  grid-area: footer; /* Asigna este elemento al área "footer" */
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  font-size: 1.5em; /* Tamaño de la fuente */
+}
+
+/* Media queries para hacer el diseño responsivo */
+
+/* Tablets (pantallas de 768px a 1024px) */
+@media (max-width: 1024px) {
+  .contenedor {
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-rows: 100px auto 1fr 100px; /* Ajusta las filas */
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "section1 section2"
+      "footer footer";
+  }
+}
+
+/* Móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: 1fr; /* Una columna */
+    grid-template-rows: 100px auto 1fr auto auto 100px; /* Ajusta las filas */
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "section1"
+      "section2"
+      "footer";
+  }
+
+  .section3 {
+    display: block; /* Muestra la sección 3 en móviles */
+    grid-area: section3; /* Asigna esta sección al área "section3" */
+  }
+}

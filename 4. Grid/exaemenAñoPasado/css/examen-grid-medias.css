@@ -1,0 +1,105 @@
+/* MÓVILES: Pantallas con un ancho menor a 600px */
+@media only screen and (max-width: 599px) {
+    main {
+      grid-template-columns: 1fr auto 1fr; /* Define 3 columnas: una flexible, una automática y otra flexible */
+    }
+  
+    /* Primer div: Ocupa todas las columnas */
+    main > div:nth-child(1) {
+      grid-column: 1 / -1; /* Se extiende desde la primera hasta la última columna */
+    }
+  
+    /* Segundo div: Ocupa todas las columnas */
+    main > div:nth-child(2) {
+      grid-column: 1 / -1; /* Se extiende desde la primera hasta la última columna */
+    }
+  
+    /* Tercer div: No se aplican cambios específicos */
+    main > div:nth-child(3) {
+      /* Sin cambios */
+    }
+  
+    /* Cuarto div: Ocupa desde la segunda columna hasta la última */
+    main > div:nth-child(4) {
+      grid-column: 2 / -1; /* Se extiende desde la segunda hasta la última columna */
+    }
+  
+    /* Quinto div: Ocupa todas las columnas y varias filas */
+    main > div:nth-child(5) {
+      grid-column: 1 / -1; /* Ocupa todas las columnas */
+      grid-row: 3 / 6; /* Ocupa desde la fila 3 hasta la fila 6 */
+    }
+  
+    /* Sexto div: Ocupa la segunda columna y una fila específica */
+    main > div:nth-child(6) {
+      grid-column: 2 / 3; /* Ocupa la segunda columna */
+      grid-row: 4 / 5; /* Ocupa la fila 4 */
+    }
+  }
+  
+  /* TABLETS: Pantallas con un ancho entre 600px y 899px */
+  @media only screen and (min-width: 600px) and (max-width: 899px) {
+    main {
+      grid-template-columns: repeat(4, 1fr); /* Define 4 columnas de igual tamaño */
+      grid-template-areas:
+        "uno uno uno uno" /* Área "uno" ocupa las 4 columnas */
+        "dos . tres ." /* Área "dos" en la primera columna, "tres" en la tercera */
+        "cuatro cuatro cinco cinco" /* Área "cuatro" y "cinco" ocupan 2 columnas cada una */
+        "seis seis seis seis"; /* Área "seis" ocupa las 4 columnas */
+    }
+  
+    /* Primer div: Asignado al área "uno" */
+    main > div:nth-child(1) {
+      grid-area: uno; /* Ocupa el área "uno" */
+    }
+  
+    /* Segundo div: Asignado al área "dos" */
+    main > div:nth-child(2) {
+      grid-area: dos; /* Ocupa el área "dos" */
+    }
+  
+    /* Tercer div: Asignado al área "tres" */
+    main > div:nth-child(3) {
+      grid-area: tres; /* Ocupa el área "tres" */
+      justify-self: center; /* Centra horizontalmente dentro de su celda */
+      align-self: center; /* Centra verticalmente dentro de su celda */
+    }
+  
+    /* Cuarto div: Asignado al área "cuatro" */
+    main > div:nth-child(4) {
+      grid-area: cuatro; /* Ocupa el área "cuatro" */
+      align-content: center; /* Centra el contenido verticalmente */
+    }
+  
+    /* Quinto div: Asignado al área "cinco" */
+    main > div:nth-child(5) {
+      grid-area: cinco; /* Ocupa el área "cinco" */
+    }
+  
+    /* Sexto div: Asignado al área "seis" */
+    main > div:nth-child(6) {
+      grid-area: seis; /* Ocupa el área "seis" */
+      justify-self: center; /* Centra horizontalmente dentro de su celda */
+    }
+  }
+  
+  /* ESCRITORIO: Pantallas con un ancho de 900px o más */
+  @media only screen and (min-width: 900px) {
+    main {
+      grid-template-columns: min-content 1fr auto; /* Define 3 columnas: una de tamaño mínimo, una flexible y una automática */
+      align-items: center; /* Centra verticalmente todos los ítems */
+    }
+  
+    /* Segundo div: Alineado al final de su celda */
+    main > div:nth-child(2) {
+      justify-self: end; /* Alinea el contenido al final de la celda (derecha) */
+    }
+  
+    /* Sexto div: Estirado verticalmente y alineado al final */
+    main > div:nth-child(6) {
+      align-self: stretch; /* Estira el ítem verticalmente */
+      align-content: end; /* Alinea el contenido al final de la celda (abajo) */
+      display: grid; /* Activa el modo Grid para este ítem */
+      justify-content: end; /* Alinea el contenido al final de la celda (derecha) */
+    }
+  }

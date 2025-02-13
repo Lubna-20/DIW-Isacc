@@ -1,12 +1,4 @@
-.grid-index-container {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "sidebar"
-    "footer";
-  gap: 2rem;
-}
+
 header {
   grid-area: header;
 }
@@ -19,27 +11,23 @@ main {
   gap: 2rem;
 }
 
-@media (max-width: 600px) {
-  .grid-index-container {
-    grid-template-areas:
-      "header"
-      "main"
-      "sidebar"
-      "footer";
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 600px) {
-  .grid-index-container {
-    grid-template-areas:
-      "header"
-      "main"
-      "sidebar"
-      "footer";
-    grid-template-columns: 1fr;
-  }
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+  gap: 2rem;
 }
 
+/* index.css */
+.grid-index-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+  grid-template-columns: 1fr 250px; /* Main ocupa el resto, sidebar 250px */
+  gap: 2rem;
+  padding: 1rem;
+}
 @media (min-width: 1024px) {
   .grid-index-container {
     grid-template-areas:
@@ -104,4 +92,33 @@ section.ofertas {
 }
 .footer {
   grid-area: footer;
+}
+/* Media query para anchuras entre 600px y 1000px */
+@media (max-width: 1000px) and (min-width: 600px) {
+  .grid-index-container {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr; /* Una columna */
+  }
+  .ofertas-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+
+  .ofertas-grid .oferta-card:last-child {
+    grid-column: span 2; /* Último card ocupa 2 columnas (centrado) */
+    justify-self: center;
+  }
+}
+/* Media query para anchuras < 600px */
+@media (max-width: 600px) {
+  .ofertas-grid {
+    grid-template-columns: 1fr; /* Una columna */
+  }
+
+  .ofertas-grid .oferta-card:last-child {
+    grid-column: span 1; /* Último card ocupa 1 columna */
+  }
 }

@@ -1,0 +1,5 @@
+[
+  { "tarea": "Hacer la compra", "completada": false },
+  { "tarea": "Estudiar jQuery", "completada": true },
+  { "tarea": "Pasear al perro", "completada": false }
+]

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de Imágenes Interactiva</title>
+    <script src="jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+      }
+
+      #galeria {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .miniatura {
+        position: relative;
+        cursor: pointer;
+        border: 2px solid #ccc;
+        padding: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .miniatura:hover {
+        transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+      }
+
+      .miniatura img {
+        width: 100px;
+        height: auto;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .miniatura:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #contenedor-imagen-grande {
+        margin-top: 20px;
+      }
+
+      #imagen-grande {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #ccc;
+        transition: filter 0.3s ease, transform 0.3s ease;
+      }
+
+      #controles {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Clases CSS para los filtros */
+      .filtro-gris {
+        filter: grayscale(100%);
+      }
+
+      .filtro-sepia {
+        filter: sepia(100%);
+      }
+    </style>
+    <h1>Galería de Imágenes</h1>
+    <div id="galeria">
+      <!-- Miniaturas de las imágenes -->
+      <div class="miniatura" data-imagen="imagen1.jpg">
+        <img src="img1.jpg" alt="Imagen 1" />
+        <span class="tooltip">Haz clic para ampliar</span>
+      </div>
+      <div class="miniatura" data-imagen="imagen2.jpg">
+        <img src="img2.jpg" alt="Imagen 2" />
+        <span class="tooltip">Haz clic para ampliar</span>
+      </div>
+      <div class="miniatura" data-imagen="imagen3.jpg">
+        <img src="img3.jpg" alt="Imagen 3" />
+        <span class="tooltip">Haz clic para ampliar</span>
+      </div>
+    </div>
+
+    <!-- Contenedor para la imagen grande -->
+    <div id="contenedor-imagen-grande">
+      <img id="imagen-grande" src="" alt="Imagen Grande" />
+    </div>
+
+    <!-- Controles para los filtros y el tamaño -->
+    <div id="controles">
+      <button id="filtro-gris">Escala de Grises</button>
+      <button id="filtro-sepia">Sepia</button>
+      <button id="aumentar-tamano">Aumentar Tamaño</button>
+      <button id="reducir-tamano">Reducir Tamaño</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Evento para mostrar la imagen grande al hacer clic en una miniatura
+        $(".miniatura").on("click", function () {
+          const rutaImagen = $(this).data("img"); // Obtener la ruta de la imagen
+          $("#imagen-grande").attr("src", rutaImagen); // Cambiar la imagen grande
+        });
+
+        // Evento para aplicar el filtro de escala de grises
+        $("#filtro-gris").on("click", function () {
+          $("#imagen-grande").toggleClass("filtro-gris"); // Alternar la clase CSS
+        });
+
+        // Evento para aplicar el filtro sepia
+        $("#filtro-sepia").on("click", function () {
+          $("#imagen-grande").toggleClass("filtro-sepia"); // Alternar la clase CSS
+        });
+
+        // Evento para aumentar el tamaño de la imagen
+        $("#aumentar-tamano").on("click", function () {
+          const imagen = $("#imagen-grande");
+          const anchoActual = imagen.width();
+          imagen.css("width", anchoActual + 50 + "px"); // Aumentar el ancho en 50px
+        });
+
+        // Evento para reducir el tamaño de la imagen
+        $("#reducir-tamano").on("click", function () {
+          const imagen = $("#imagen-grande");
+          const anchoActual = imagen.width();
+          if (anchoActual > 100) {
+            // Evitar que la imagen sea demasiado pequeña
+            imagen.css("width", anchoActual - 50 + "px"); // Reducir el ancho en 50px
+          }
+        });
+
+        // Evento para mostrar el tooltip al pasar el ratón sobre una miniatura
+        $(".miniatura").on("mouseenter", function () {
+          $(this)
+            .find(".tooltip")
+            .css("opacity", 1)
+            .css("visibility", "visible");
+        });
+
+        // Evento para ocultar el tooltip al quitar el ratón de una miniatura
+        $(".miniatura").on("mouseleave", function () {
+          $(this)
+            .find(".tooltip")
+            .css("opacity", 0)
+            .css("visibility", "hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

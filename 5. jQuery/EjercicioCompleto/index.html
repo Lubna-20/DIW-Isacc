@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tareas con jQuery</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #lista-tareas {
+        list-style-type: none;
+        padding: 0;
+      }
+      #lista-tareas li {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .completada {
+        text-decoration: line-through;
+        color: #888;
+      }
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea" />
+    <button id="agregar-tarea">Agregar Tarea</button>
+    <button id="cargar-tareas">Cargar Tareas desde JSON</button>
+    <ul id="lista-tareas"></ul>
+
+    <script>
+
+        //Este ejercicio consiste en una lista de tareas donde el usuario puede:
+        // Agregar nuevas tareas.
+        // tareas como completadas
+        // Eliminar tareas.
+        // Cargar tareas desde un archivo JSON usando AJAX.
+      $(document).ready(function () {
+        // Función para agregar una tarea a la lista
+        function agregarTarea(texto, completada = false) {
+          const tarea = $("<li></li>").text(texto); // Crear un nuevo elemento <li>
+          if (completada) {
+            tarea.addClass("completada"); // Marcar como completada si es necesario
+          }
+
+          // Botón para marcar como completada
+          const botonCompletar = $("<button>Completar</button>").on(
+            "click",
+            function () {
+              tarea.toggleClass("completada"); // Alternar la clase "completada"
+            }
+          );
+
+          // Botón para eliminar la tarea
+          const botonEliminar = $("<button>Eliminar</button>").on(
+            "click",
+            function () {
+              tarea.fadeOut(500, function () {
+                $(this).remove(); // Eliminar la tarea después de desvanecerla
+              });
+            }
+          );
+
+          // Agregar botones a la tarea
+          tarea.append(botonCompletar, botonEliminar);
+
+          // Agregar la tarea a la lista
+          $("#lista-tareas").append(tarea);
+        }
+
+        // Evento para agregar una nueva tarea
+        $("#agregar-tarea").on("click", function () {
+          const texto = $("#nueva-tarea").val().trim(); // Obtener el texto del input
+          if (texto !== "") {
+            agregarTarea(texto); // Agregar la tarea si el texto no está vacío
+            $("#nueva-tarea").val(""); // Limpiar el input
+          } else {
+            alert("Por favor, escribe una tarea."); // Mostrar alerta si el input está vacío
+          }
+        });
+
+        // Evento para cargar tareas desde el archivo JSON
+        $("#cargar-tareas").on("click", function () {
+          $.ajax({
+            url: "tareas.json", // Ruta al archivo JSON
+            method: "GET",
+            success: function (data) {
+              data.forEach(function (item) {
+                agregarTarea(item.tarea, item.completada); // Agregar cada tarea del JSON
+              });
+            },
+            error: function () {
+              alert("Error al cargar las tareas."); // Mostrar alerta si hay un error
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

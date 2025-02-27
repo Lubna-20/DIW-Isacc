@@ -5,35 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registro</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
   </head>
   <body class="bg-light">
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#"
-          ><i class="bi bi-house-door"></i> Brand</a
-        >
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-house-door-fill"></i> Brand
+        </a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Registro</a>
+              <a class="nav-link" aria-current="page" href="inicio.html"
+                >Inicio</a
+              >
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Recursos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Registro.html">Registro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <!-- Menú desplegable Recursos -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="recursosDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Recursos
+              </a>
+              <ul
+                class="dropdown-menu btn btn-secondary"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <li><a class="dropdown-item" href="#">Documentación</a></li>
+                <li><a class="dropdown-item" href="#">Tutoriales</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Soporte</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -44,54 +86,75 @@
       <div class="card shadow">
         <div class="card-body">
           <div class="card-header bg-success text-white text-center mb-4">
-            <h4>Formulario de Registro</h4>
+            <h4 class="m-0">Formulario de Registro</h4>
           </div>
           <form class="row-g3">
             <div class="row mb-3">
-              <div class="form-floating mb-3 col-lg-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Nombre"
-                />
-                <label for="nombre">Nombre</label>
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Nombre"
+                    data-bs-toggle="tooltip"
+                    title="Ingresa tu nombre"
+                  />
+                  <label for="nombre">Nombre</label>
+                </div>
               </div>
-              <div class="form-floating mb-3 col-lg-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="ape"
-                  placeholder="Password"
-                />
-                <label for="ape">Apellido</label>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="ape"
+                    placeholder="Password"
+                    data-bs-toggle="tooltip"
+                    title="Ingresa tus apellidos"
+                  />
+                  <label for="ape">Apellido</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="name@example.com"
+                    data-bs-toggle="tooltip"
+                    title="Ingresa tu correo Electrónico"
+                  />
+                  <label for="email">Correo Electrónico</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <select
+                    class="form-select mb-3 p-3"
+                    aria-label="Large select example"
+                    data-bs-toggle="tooltip"
+                    title="Ingresa el tipo de usuario"
+                  >
+                    <option selected>Seleccione tipo de usuario</option>
+                    <option>Individual</option>
+                    <option>Empresa</option>
+                    <option>Corporativo</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="row mb-3">
-              <div class="form-floating mb-3 col-lg-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="name@example.com"
-                />
-                <label for="email">Correo Electrónico</label>
-              </div>
-              <div class="col-md-6 form-floating">
+              <div class="col-lg-6 col-md-12 mb-3">
                 <select
-                  class="form-select mb-3 p-3"
-                  aria-label="Large select example"
+                  class="form-select p-2"
+                  id="ccaa"
+                  data-bs-toggle="tooltip"
+                  title="Indica la CCAA donde vives"
                 >
-                  <option selected>Seleccione tipo de usuario</option>
-                  <option>Individual</option>
-                  <option>Empresa</option>
-                  <option>Corporativo</option>
-                </select>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <select class="form-select p-3" id="comunidad">
                   <option selected>Comunidad Autónoma</option>
                   <option>Andalucía</option>
                   <option>Aragón</option>
@@ -114,13 +177,104 @@
                   <option>Comunidad Valenciana</option>
                 </select>
               </div>
-              <div class="col-md-6">
-                <label for="codigo" class="form-label">Código de referido</label>
+              <div class="col-md-12 col-lg-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="codigo" placeholder="Código de referido">
-                    <button class="btn btn-secondary" type="button">Aplicar</button>
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    id="codigo"
+                    placeholder="Código de referido"
+                    data-bs-toggle="tooltip"
+                    title="Ingresa el código de referido si tienes uno"
+                  />
+                  <button class="btn btn-secondary" type="button">
+                    Aplicar
+                  </button>
                 </div>
+              </div>
             </div>
+            <div class="row mb-3">
+              <div class="col-lg-4 col-md-4">
+                <label class="form-label">Intereses</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="interes1"
+                  />
+                  <label class="form-check-label" for="interes1"
+                    >Tecnología</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="interes2"
+                  />
+                  <label class="form-check-label" for="interes2"
+                    >Negocios</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="interes3"
+                  />
+                  <label class="form-check-label" for="interes3">Diseño</label>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <label class="form-label">Plan de Suscripción</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="plan"
+                    id="planBasico"
+                  />
+                  <label class="form-check-label" for="planBasico"
+                    >Plan Básico
+                    <i
+                      class="bi bi-info-circle"
+                      data-bs-toggle="tooltip"
+                      title="Plan gratuito con funciones básicas"
+                    ></i
+                  ></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="plan"
+                    id="planPremium"
+                  />
+                  <label class="form-check-label" for="planPremium"
+                    >Plan Premium
+                    <i
+                      class="bi bi-info-circle"
+                      data-bs-toggle="tooltip"
+                      title="Plan con todas las funciones desbloqueadas"
+                    ></i
+                  ></label>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <div class="d-flex align-items-center">
+                  <label for="tema" class="form-label">Tema :</label>
+                  <label for=""></label>
+                  <input
+                    type="color"
+                    class="form-control form-control-color"
+                    id="tema"
+                    value="#000000"
+                  />
+                  <span id="colorValue" class="ms-3 fw-monospace fw-bold"
+                    >#000000</span
+                  >
+                </div>
+              </div>
             </div>
 
             <div class="text-center">
@@ -138,6 +292,166 @@
       );
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      $(document).ready(function () {
+        //
+        $("#tema").on("input change", function () {
+          $("#colorValue").text(this.value);
+          $("#colorValue").css("color", this.value);
+          $("#colorValue").css("font-family", "monospace");
+        });
+
+        // 3.2. Código de referido: Validar y llamar a codigos.json
+        $("#btnAplicar").on("click", function () {
+          var codigo = $("#codigo").val().trim();
+          if (codigo === "") {
+            showToast(
+              "Error",
+              "El código de referido está vacío.",
+              "bg-danger"
+            );
+            return;
+          }
+          $.ajax({
+            url: "./json/codigos.json",
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+              var valid = false;
+              var descuento = "";
+              // Supongamos que el JSON tiene la estructura: { "codigos": [ { "codigo": "ABC123", "descuento": "10%" }, ... ] }
+              $.each(data.codigos, function (index, item) {
+                if (item.codigo === codigo) {
+                  valid = true;
+                  descuento = item.descuento;
+                  return false; // Sale del bucle
+                }
+              });
+              if (!valid) {
+                showToast(
+                  "Error",
+                  "Código de referido no válido.",
+                  "bg-danger"
+                );
+              } else {
+                showToast(
+                  "Éxito",
+                  "Código válido. Descuento aplicado: " + descuento,
+                  "bg-success"
+                );
+                $("#codigo").prop("disabled", true);
+                $("#btnAplicar").prop("disabled", true);
+              }
+            },
+            error: function () {
+              showToast(
+                "Error",
+                "Error al verificar el código de referido.",
+                "bg-danger"
+              );
+            },
+          });
+        });
+
+        // 3.3. Botón de registro: Validar campos y enviar datos vía AJAX
+        $("form").on("submit", function (e) {
+          e.preventDefault();
+          var isValid = true;
+          // Eliminar resaltado previo
+          $("input, select").removeClass("bg-danger bg-opacity-25");
+
+          // Comprobar los primeros 5 campos:
+          if ($("#nombre").val().trim() === "") {
+            $("#nombre").addClass("bg-danger bg-opacity-25");
+            isValid = false;
+          }
+          if ($("#ape").val().trim() === "") {
+            $("#ape").addClass("bg-danger bg-opacity-25");
+            isValid = false;
+          }
+          if ($("#email").val().trim() === "") {
+            $("#email").addClass("bg-danger bg-opacity-25");
+            isValid = false;
+          }
+          if (
+            $("#tipoUsuario").val() === "Seleccione tipo de usuario" ||
+            $("#tipoUsuario").val().trim() === ""
+          ) {
+            $("#tipoUsuario").addClass("bg-danger bg-opacity-25");
+            isValid = false;
+          }
+          if (
+            $("#ccaa").val() === "Comunidad Autónoma" ||
+            $("#ccaa").val().trim() === ""
+          ) {
+            $("#ccaa").addClass("bg-danger bg-opacity-25");
+            isValid = false;
+          }
+
+          // Verificar que se haya seleccionado un plan
+          if (!$("input[name='plan']:checked").val()) {
+            isValid = false;
+            showToast(
+              "Error",
+              "Debes seleccionar un plan de suscripción.",
+              "bg-danger"
+            );
+            return;
+          }
+
+          if (!isValid) {
+            showToast(
+              "Error",
+              "Completa todos los campos requeridos.",
+              "bg-danger"
+            );
+            return;
+          }
+
+          // Si todo es correcto, enviar datos vía AJAX a registro.json
+          $.ajax({
+            url: "./json/registro.json",
+            method: "POST",
+            data: $(this).serialize(),
+            dataType: "json",
+            success: function (response) {
+              if (response.error === 0) {
+                $("#modalBody").html("<p>Registro correcto.</p>");
+              } else {
+                $("#modalBody").html("<p>" + response.error_msg + "</p>");
+              }
+              var modal = new bootstrap.Modal(
+                document.getElementById("registroModal")
+              );
+              modal.show();
+            },
+            error: function () {
+              $("#modalBody").html("<p>Error en la petición de registro.</p>");
+              var modal = new bootstrap.Modal(
+                document.getElementById("registroModal")
+              );
+              modal.show();
+            },
+          });
+        });
+
+        // Quitar resaltado al recibir foco
+        $("input, select").on("focus", function () {
+          $(this).removeClass("bg-danger bg-opacity-25");
+        });
+
+        // Función para mostrar toast
+        function showToast(title, message, headerClass) {
+          $("#toastTitle").text(title);
+          $("#toastBody").text(message);
+          $("#liveToast .toast-header")
+            .removeClass("bg-danger bg-success")
+            .addClass(headerClass);
+          var toastEl = document.getElementById("liveToast");
+          var toast = new bootstrap.Toast(toastEl);
+          toast.show();
+        }
       });
     </script>
   </body>

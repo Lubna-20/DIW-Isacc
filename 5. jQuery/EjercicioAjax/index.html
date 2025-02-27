@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo Completo de jQuery, AJAX y Bootstrap</title>
+    
+    <!-- Bootstrap CSS -->
+    <link
+      href="bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <!-- jQuery -->
+    <script src="jquery-3.7.1.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="bootstrap.bundle.min.js"></script>
+    
+    <style>
+      /* Estilos para clases específicas */
+      .activo {
+        color: green;
+      }
+      .inactivo {
+        color: red;
+      }
+      .resaltar {
+        background-color: lightgreen !important;
+      }
+      .oculto {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="container py-4">
+    <h1 class="text-center mb-4">Lista de Usuarios</h1>
+    
+    <!-- Botones para acciones -->
+    <div class="d-flex justify-content-center gap-3">
+      <button id="cargarDatos" class="btn btn-primary">Cargar Datos</button>
+      <button id="toggleTabla" class="btn btn-warning">Ocultar Tabla</button>
+      <button id="cambiarColor" class="btn btn-info">Cambiar Color de Fondo</button>
+    </div>
+    
+    <!-- Mensaje de estado -->
+    <div id="mensaje" class="alert mt-3 d-none"></div>
+    
+    <!-- Tabla de usuarios -->
+    <table id="tablaUsuarios" class="table table-striped mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Ciudad</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Datos dinámicos -->
+      </tbody>
+    </table>
+    
+    <!-- Sección de detalles del usuario -->
+    <div id="detallesUsuario" class="oculto card mt-4 p-3">
+      <h2>Detalles del Usuario</h2>
+      <p><strong>ID:</strong> <span id="detalleId"></span></p>
+      <p><strong>Nombre:</strong> <span id="detalleNombre"></span></p>
+      <p><strong>Edad:</strong> <span id="detalleEdad"></span></p>
+      <p><strong>Ciudad:</strong> <span id="detalleCiudad"></span></p>
+      <p><strong>Estado:</strong> <span id="detalleEstado"></span></p>
+      <button id="cerrarDetalles" class="btn btn-danger">Cerrar</button>
+    </div>
+    
+    <script>
+      $(document).ready(function () {
+        // Cargar datos desde un archivo JSON al hacer clic en el botón
+        $(document).on("click", "#cargarDatos", function () {
+          $.ajax({
+            url: "datos.json",
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+              // Mostrar mensaje de éxito
+              $("#mensaje").removeClass("alert-danger d-none").addClass("alert-success").text("Datos cargados correctamente.");
+              $("#tablaUsuarios tbody").empty();
+              
+              // Agregar datos a la tabla dinámicamente
+              $.each(data, function (index, usuario) {
+                var fila = `<tr>
+                  <td>${usuario.id}</td>
+                  <td>${usuario.nombre}</td>
+                  <td>${usuario.edad}</td>
+                  <td>${usuario.ciudad}</td>
+                  <td class="${usuario.activo ? 'activo' : 'inactivo'}">${usuario.activo ? 'Activo' : 'Inactivo'}</td>
+                </tr>`;
+                $("#tablaUsuarios tbody").append(fila);
+              });
+            },
+            error: function () {
+              // Mostrar mensaje de error
+              $("#mensaje").removeClass("alert-success d-none").addClass("alert-danger").text("Error al cargar los datos.");
+            }
+          });
+        });
+
+        // Ocultar o mostrar la tabla al hacer clic en el botón
+        $(document).on("click", "#toggleTabla", function () {
+          $("#tablaUsuarios").fadeToggle();
+          $(this).text(function (_, text) {
+            return text === "Ocultar Tabla" ? "Mostrar Tabla" : "Ocultar Tabla";
+          });
+        });
+
+        // Cambiar el color de fondo de las filas al hacer clic en el botón
+        $(document).on("click", "#cambiarColor", function () {
+          $("#tablaUsuarios").addClass("resaltar");
+        });
+
+        // Mostrar detalles del usuario al hacer clic en una fila de la tabla
+        $(document).on("click", "#tablaUsuarios tbody tr", function () {
+          var id = $(this).find("td:eq(0)").text();
+          var nombre = $(this).find("td:eq(1)").text();
+          var edad = $(this).find("td:eq(2)").text();
+          var ciudad = $(this).find("td:eq(3)").text();
+          var estado = $(this).find("td:eq(4)").text();
+
+          $("#detalleId").text(id);
+          $("#detalleNombre").text(nombre);
+          $("#detalleEdad").text(edad);
+          $("#detalleCiudad").text(ciudad);
+          $("#detalleEstado").text(estado);
+
+          $("#detallesUsuario").fadeIn();
+        });
+
+        // Cerrar los detalles del usuario al hacer clic en el botón
+        $(document).on("click", "#cerrarDetalles", function () {
+          $("#detallesUsuario").fadeOut();
+        });
+      });
+    </script>
+  </body>
+</html>

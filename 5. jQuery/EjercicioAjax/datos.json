@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Juan Pérez",
+    "edad": 28,
+    "ciudad": "Madrid",
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "María Gómez",
+    "edad": 34,
+    "ciudad": "Barcelona",
+    "activo": false
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos Ruiz",
+    "edad": 45,
+    "ciudad": "Valencia",
+    "activo": true
+  }
+]

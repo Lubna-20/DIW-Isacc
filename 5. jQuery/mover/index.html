@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio jQuery - Mover Elemento</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #contenedor {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        #cuadrado {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ejercicio jQuery: Mueve el Cuadrado</h2>
+
+    <div id="contenedor">
+        <div id="cuadrado"></div>
+    </div>
+
+    <button id="arriba">⬆️ Arriba</button><br>
+    <button id="izquierda">⬅️ Izquierda</button>
+    <button id="derecha">➡️ Derecha</button><br>
+    <button id="abajo">⬇️ Abajo</button>
+
+    <script>
+        $(document).ready(function(){
+            let paso = 10; // Cantidad de píxeles que se moverá el cuadrado
+
+            $("#arriba").click(function(){
+                let posActual = $("#cuadrado").position();
+                if (posActual.top > 0) {
+                    $("#cuadrado").css("top", posActual.top - paso);
+                }
+            });
+
+            $("#abajo").click(function(){
+                let posActual = $("#cuadrado").position();
+                if (posActual.top < $("#contenedor").height() - $("#cuadrado").height()) {
+                    $("#cuadrado").css("top", posActual.top + paso);
+                }
+            });
+
+            $("#izquierda").click(function(){
+                let posActual = $("#cuadrado").position();
+                if (posActual.left > 0) {
+                    $("#cuadrado").css("left", posActual.left - paso);
+                }
+            });
+
+            $("#derecha").click(function(){
+                let posActual = $("#cuadrado").position();
+                if (posActual.left < $("#contenedor").width() - $("#cuadrado").width()) {
+                    $("#cuadrado").css("left", posActual.left + paso);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

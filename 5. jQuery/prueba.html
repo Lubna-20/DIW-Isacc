@@ -12,7 +12,7 @@
 
     <input type="text" id="textbox"> 
     <script>
-      /** $(document).ready(function () {
+      $(document).ready(function () {
         $("#mi-boton").click(boton_click);
       });
 
@@ -36,9 +36,9 @@
 
       $("#mi-boton").on("mouse", function(){
         alert("HAS PULSADO EL BOTON")
-      });*/
+      });
 
-      /** $(document).ready(function () {
+       $(document).ready(function () {
         $("#mi-boton").on(
           "mouseenter",
           {
@@ -58,15 +58,15 @@
 
       function saludo(event) {
         console.log("Hola " + event.data.nombre);
-      }*/
+      }
 
-     /** $(document).ready(function () {
+      $(document).ready(function () {
         $("#mi-boton").on("click", function (event) {
           console.log("Tipo de evento:", event.type);
           console.log("Posición del mouse X:", event.pageX);
           console.log("Posición del mouse Y:", event.pageY);
         });
-      });*/
+      });
       $(document).ready(function () { 
     $("#textbox").on("keydown", function () { 
       console.log("keydown event"); 

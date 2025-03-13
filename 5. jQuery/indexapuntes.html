@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes Completos de jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .resaltado { background-color: yellow; }
+        .oculto { display: none; }
+        .completado { text-decoration: line-through; color: gray; }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center">📌 Apuntes Completos de jQuery</h2>
+    <button id="btnEvento" class="btn btn-primary">Haz clic aquí</button>
+    <input type="text" id="miInput" class="form-control mt-2" placeholder="Escribe algo">
+    <p id="miTexto" class="mt-2">Texto de ejemplo</p>
+    <ul id="lista" class="list-group mt-2">
+        <li class="list-group-item">Elemento 1</li>
+        <li class="list-group-item">Elemento 2</li>
+    </ul>
+    <button id="agregar" class="btn btn-success mt-2">Agregar elemento</button>
+    <button id="toggle" class="btn btn-warning mt-2">Mostrar/Ocultar</button>
+    <button id="cargarJSON" class="btn btn-info mt-2">Cargar Datos JSON</button>
+    <div id="contenedorJSON" class="mt-3"></div>
+    <button id="atributos" class="btn btn-secondary mt-2">Probar Métodos de Atributos</button>
+    <button id="efectos" class="btn btn-danger mt-2">Probar Efectos</button>
+    <a id="miEnlace" href="https://example.com" target="_blank">Enlace de prueba</a>
+
+    <!-- 🎯 FORMULARIO DE PRUEBA -->
+    <h3 class="mt-4">Formulario de Prueba</h3>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" class="form-control">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control">
+        
+        <label>
+            <input type="checkbox" id="acepto"> Acepto los términos
+        </label>
+        
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
+
+<script>
+$(document).ready(function () {
+    console.log("✔️ jQuery cargado correctamente.");
+
+    // 🎯 EFECTOS Y ANIMACIONES
+    $("#efectos").on("click", function () {
+        $("#miTexto").fadeOut(500).fadeIn(500);
+        $("#miTexto").slideUp(500).slideDown(500);
+        $("#miTexto").animate({ fontSize: "24px", opacity: 0.5 }, 500).animate({ fontSize: "16px", opacity: 1 }, 500);
+    });
+
+    // 🎯 EVENTOS DE FORMULARIO
+    $("#miFormulario").on("submit", function (event) {
+        event.preventDefault();
+        let nombre = $("#nombre").val();
+        let email = $("#email").val();
+        let acepto = $("#acepto").is(":checked");
+        
+        if (nombre === "" || email === "") {
+            alert("Todos los campos son obligatorios.");
+            return;
+        }
+        if (!acepto) {
+            alert("Debes aceptar los términos.");
+            return;
+        }
+        alert("Formulario enviado con éxito!");
+    });
+
+    $("#nombre").on("focus", function () {
+        $(this).css("background-color", "lightyellow");
+    }).on("blur", function () {
+        $(this).css("background-color", "white");
+    });
+
+    $("#email").on("change", function () {
+        console.log("Nuevo email ingresado:", $(this).val());
+    });
+
+    // 🎯 SELECCIÓN DE ELEMENTOS
+    $("#miTexto").text("Nuevo texto con jQuery");
+    $("ul li:first").css("color", "red");
+
+    // 🎯 EVENTOS
+    $("#btnEvento").on("click", function () {
+        alert("¡Botón clickeado!");
+    });
+    $("#miInput").on("keyup", function (event) {
+        console.log("Tecla presionada:", event.key);
+    });
+
+    // 🎯 AJAX - Carga de datos desde API
+    $.get("https://jsonplaceholder.typicode.com/users?_limit=3", function (data) {
+        data.forEach(user => {
+            $("#lista").append(`<li class='list-group-item'>${user.name}</li>`);
+        });
+    }).fail(function () {
+        console.log("Error al cargar los datos");
+    });
+});
+</script>
+</body>
+</html>

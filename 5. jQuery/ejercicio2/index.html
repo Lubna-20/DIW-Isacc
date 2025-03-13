@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .completado {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header text-center bg-primary text-white">
+            <h3>Lista de Tareas</h3>
+        </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <input type="text" id="nuevaTarea" class="form-control" placeholder="Escribe una nueva tarea...">
+                <button id="agregarTarea" class="btn btn-primary">Agregar</button>
+            </div>
+
+            <ul id="listaTareas" class="list-group">
+                <li id="mensajeVacio" class="list-group-item text-center text-muted">No hay tareas pendientes</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Simular carga de tareas con AJAX
+        setTimeout(function () {
+            let tareas = ["Aprender Bootstrap", "Practicar jQuery", "Hacer ejercicio"];
+            $("#mensajeVacio").remove();
+            tareas.forEach(function (tarea) {
+                agregarElementoLista(tarea);
+            });
+        }, 1000);
+
+        // Agregar tarea
+        $("#agregarTarea").click(function () {
+            let tarea = $("#nuevaTarea").val().trim();
+            if (tarea !== "") {
+                agregarElementoLista(tarea);
+                $("#nuevaTarea").val(""); // Limpiar input
+            }
+        });
+
+        // Marcar tarea como completada
+        $(document).on("click", ".tarea", function () {
+            $(this).toggleClass("completado");
+        });
+
+        // Eliminar tarea
+        $(document).on("click", ".eliminar", function () {
+            $(this).parent().remove();
+            verificarListaVacia();
+        });
+
+        // Agregar tarea a la lista
+        function agregarElementoLista(tarea) {
+            $("#listaTareas").append(`
+                <li class="list-group-item d-flex justify-content-between align-items-center tarea">
+                    ${tarea}
+                    <button class="btn btn-danger btn-sm eliminar">Eliminar</button>
+                </li>
+            `);
+            $("#mensajeVacio").remove();
+        }
+
+        // Verificar si la lista está vacía
+        function verificarListaVacia() {
+            if ($("#listaTareas").children().length === 0) {
+                $("#listaTareas").append('<li id="mensajeVacio" class="list-group-item text-center text-muted">No hay tareas pendientes</li>');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

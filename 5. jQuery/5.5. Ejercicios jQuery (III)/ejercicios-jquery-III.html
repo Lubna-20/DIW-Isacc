@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios jQuery (II)</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="soluciones/estilos_generales.css">
+
+  <script src="../jquery-3.7.1.min.js"></script>
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 135px;
+    }
+
+    #container {
+      display: block !important;
+    }
+
+    .exercise h3 {
+      border-bottom: 3px solid transparent;
+      transition: border-bottom 0.3s ease;
+    }
+
+    .exercise:hover h3 {
+      border-bottom: 3px solid #007bff;
+    }
+
+    p {
+      margin-block: 0.5em;
+    }
+
+    .exercise {
+      margin-bottom: 1.5em;
+    }
+
+    .solution {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      background-color: #e5e4c5;
+    }
+
+    #navbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #343a40;
+      padding: 3px;
+      font-size: 0.875em;
+    }
+
+    #navbar a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #navbar a:hover {
+      background-color: #007bff;
+      text-decoration: none;
+    }
+
+    img.img-ejercicio {
+      margin: 10px auto;
+      display: block;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Ejercicios jQuery (III)</h1>
+    <div id="navbar">
+      <a href="#ejercicio1">Ej.1</a>
+      <a href="#ejercicio2">Ej.2</a>
+      <a href="#ejercicio3">Ej.3</a>
+      <a href="#ejercicio4">Ej.4</a>
+      <a href="#ejercicio5">Ej.5</a>
+      <a href="#ejercicio6">Ej.6</a>
+      <a href="#ejercicio7">Ej.7</a>
+      <a href="#ejercicio8">Ej.8</a>
+      <a href="#ejercicio9">Ej.9</a>
+      <a href="#ejercicio10">Ej.10</a>
+      <a href="#ejercicio11">Ej.11</a>
+      <a href="#ejercicio12">Ej.12</a>
+      <a href="#ejercicio13">Ej.13</a>
+      <a href="#ejercicio14">Ej.14</a>
+      <a href="#ejercicio15">Ej.15</a>
+      <a href="#ejercicio16">Ej.16</a>
+      <a href="#ejercicio17">Ej.17</a>
+      <a href="#ejercicio18">Ej.18</a>
+    </div>
+  </div>
+
+  <div id="container">
+    <!-- Ejercicio 1 -->
+    <div class="exercise">
+      <h3 id="ejercicio1">Ejercicio 1</h3>
+      <p>Los siguientes campos numéricos representan la temperatura en grados centígrados y celsius. Con jQuery, consigue que cuando se modifique el valor de cualquiera de los inputs, el valor del otro se calcule automáticamente. Las fórmulas de conversión son: <code>°F = (°C x 9/5) + 32</code> y <code>°C = (°F - 32) x 5/9</code></p>
+
+      <pre><code class="language-html">&lt;label for=&quot;celsius&quot;&gt;Grados Celsius:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;celsius&quot;&gt;
+&lt;br&gt;
+&lt;label for=&quot;fahrenheit&quot;&gt;Grados Fahrenheit:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;fahrenheit&quot;&gt;</code></pre>
+    </div>
+
+    <!-- Ejercicio 2 -->
+    <div class="exercise">
+      <h3 id="ejercicio2">Ejercicio 2</h3>
+      <p>Crea el código jQuery que busque en el siguiente texto todos los elementos <code>&lt;a&gt;</code> que se abren en una nueva ventana y los ponga de color rojo.</p>
+
+      <blockquote><i>Lorem ipsum, dolor sit amet consectetur adipisicing <a href="https://www.google.com/" target="_blank">elit</a>. Quasi <a href="https://www.educarex.es/">ratione</a> voluptatem obcaecati, dolorum quod laudantium similique magnam nam sed dolorem <a href="https://profex.educarex.es/" target="_blank">laborum</a> esse, exercitationem fugiat quae amet ea non! Perferendis, vel.</i></blockquote>
+    </div>
+
+    <!-- Ejercicio 3 -->
+    <div class="exercise">
+      <h3 id="ejercicio3">Ejercicio 3</h3>
+      <p>Crea el código jQuery que transforme todas las vocales introducidas en un input de tipo texto por la letra <kbd>'i'</kbd>.</p>
+    </div>
+
+    <!-- Ejercicio 4 -->
+    <div class="exercise">
+      <h3 id="ejercicio4">Ejercicio 4</h3>
+      <p>Crea el código jQuery para que cuando cualquier elemento de un formulario reciba el foco, todo el formulario obtenga un borde redondeado de color gris y una sombra. Cuando el formulario pierda el foco desaparecerá el borde y la sombra.</p>
+    </div>
+
+    <!-- Ejercicio 5 -->
+    <div class="exercise">
+      <h3 id="ejercicio5">Ejercicio 5</h3>
+      <p>Crea el código jQuery que compruebe la validez de un formulario de login. En el momento en que se pulse la tecla <kbd>Enter</kbd> en cualquiera de los inputs, se comprobará si ambos no están vacíos. Si alguno lo está, creará y mostrará dinámicamente un mensaje de aviso al usuario y pondrá un outline rojo al elemento vacío. Si cualquiera de los dos elementos tiene el outline cuando recibe el foco, este se elimina.</p>
+    </div>
+
+    <!-- Ejercicio 6 -->
+    <div class="exercise">
+      <h3 id="ejercicio6">Ejercicio 6</h3>
+      <p>Crea el código jQuery para que un input de tipo numérico solo pueda recibir números binarios, evitando la escritura de cualquier otro carácter distinto a <kbd>'0'</kbd> y <kbd>'1'</kbd>. Cuando se actualice el valor de ese input, aparecerá debajo el número correspondiente en decimal.</p>
+
+    </div>
+
+    <!-- Ejercicio 7 -->
+    <div class="exercise">
+      <h3 id="ejercicio7">Ejercicio 7</h3>
+      <p>Crea el código jQuery que compruebe si el valor introducido en un input de texto es una IPv4 válida.</p>
+    </div>
+
+    <!-- Ejercicio 8 -->
+    <div class="exercise">
+      <h3 id="ejercicio8">Ejercicio 8</h3>
+      <p>Crea el código jQuery que modifique el color del texto de un párrafo entre rojo, verde y azul a partir de 3 checkboxes.</p>
+    </div>
+
+    <!-- Ejercicio 9 -->
+    <div class="exercise">
+      <h3 id="ejercicio9">Ejercicio 9</h3>
+      <p>Con jQuery, modifica el valor de los span de la frase en función del radiobutton seleccionado de cada grupo. Además, cada modificación de un span se hará con una animación fadeIn y fadeOut.</p>
+
+      <p><u>HTML</u>:</p>
+      <pre><code class="language-html">&lt;div id=&quot;radio-container&quot;&gt;
+  &lt;div id=&quot;grupo1&quot;&gt;
+    &lt;p&gt;Grupo 1:&lt;/p&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;inteligente&quot;&gt; Inteligente&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;ingenioso&quot;&gt; Ingenioso&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;brillante&quot;&gt; Brillante&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&quot;grupo2&quot;&gt;
+    &lt;p&gt;Grupo 2:&lt;/p&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;simpático&quot;&gt; Simpático&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;gracioso&quot;&gt; Gracioso&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;sociable&quot;&gt; Sociable&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&quot;grupo3&quot;&gt;
+    &lt;p&gt;Grupo 3:&lt;/p&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo3&quot; value=&quot;atractivo&quot;&gt; Atractivo&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo3&quot; value=&quot;apuesto&quot;&gt; Apuesto&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo3&quot; value=&quot;guapo&quot;&gt; Guapo&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;frase&quot;&gt;Mi profe de DIW es &lt;span&gt;______&lt;/span&gt;, &lt;span&gt;______&lt;/span&gt; y &lt;span&gt;______&lt;/span&gt;.&lt;/p&gt;</code></pre>
+
+      <p><u>CSS</u>:</p>
+      <pre><code class="language-css">#radio-container {
+  display: flex;
+}
+
+#radio-container&gt;* {
+  flex-grow: 1;
+  margin-block: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.frase {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.frase span {
+  padding: 4px 8px;
+  font-weight: normal;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.frase span:nth-child(1) {
+  background-color: #3498DB;
+}
+
+.frase span:nth-child(2) {
+  background-color: #ca2917;
+}
+
+.frase span:nth-child(3) {
+  background-color: #0c9846;
+}</code></pre>
+    </div>
+
+    <!-- Ejercicio 10 -->
+    <div class="exercise">
+      <h3 id="ejercicio10">Ejercicio 10</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 11 -->
+    <div class="exercise">
+      <h3 id="ejercicio11">Ejercicio 11</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 12 -->
+    <div class="exercise">
+      <h3 id="ejercicio12">Ejercicio 12</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 13 -->
+    <div class="exercise">
+      <h3 id="ejercicio13">Ejercicio 13</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 14 -->
+    <div class="exercise">
+      <h3 id="ejercicio14">Ejercicio 14</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 15 -->
+    <div class="exercise">
+      <h3 id="ejercicio15">Ejercicio 15</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 16 -->
+    <div class="exercise">
+      <h3 id="ejercicio16">Ejercicio 16</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 17 -->
+    <div class="exercise">
+      <h3 id="ejercicio17">Ejercicio 17</h3>
+      <p></p>
+
+
+    </div>
+
+    <!-- Ejercicio 18 -->
+    <div class="exercise">
+      <h3 id="ejercicio18">Ejercicio 18</h3>
+      <p></p>
+
+
+    </div>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="texto" id="texto" />
+  </body>
+  <script>
+    //Crea el código jQuery que transforme todas las vocales introducidas
+    //en un input de tipo texto por la letra 'i'.
+    $(document).ready(function () {
+      $("#texto").on("input", function () {
+        var texto = $(this).val();
+        var vocales = ["a", "e", "i", "o", "u"];
+        for (var i = 0; i < texto.length; i++) {
+          if (vocales.includes(texto[i].toLowerCase())) {
+            texto = texto.replace(texto[i], "i");
+          }
+        }
+        $("#texto").val(texto);
+        $("#texto").trigger("change"); //Simula el evento change para actualizar el contador de caracteres
+      });
+    });
+  </script>
+</html>
+

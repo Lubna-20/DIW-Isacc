@@ -18,4 +18,11 @@
       >
     </p>
   </body>
+  <script>
+    //Crea el código jQuery que busque en el siguiente texto todos los elementos
+    //<a> que se abren en una nueva ventana y los ponga de color rojo.
+    $(document).ready(function () {
+      $("a[target='_blank']").css("color", "red");
+    });
+  </script>
 </html>

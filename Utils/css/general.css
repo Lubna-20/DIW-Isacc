@@ -18,36 +18,14 @@ code:not(pre code) {
   font-family: "Roboto Mono", monospace;
 }
 
-/* Estilos para el botón de copiar */
-pre {
-  position: relative;
-}
-
-.hljs-copy {
-  position: absolute;
-  cursor: pointer;
-  right: 5px;
-  top: 5px;
-  background-color: #4d4d4d;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  font-size: 12px;
-  transition: background-color 0.3s ease;
-}
-
-.hljs-copy:hover {
-  background-color: #7c7c7c;
-}
-
 /* Panel de explicación */
 .explanation {
   background-color: #fff59d;
   /* border: 1px solid #fff59d; */
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  margin-top: 30px;
+  margin: 30px auto;
+  max-width: 900px;
   border-radius: 3px;
   font-family: system-ui, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -58,4 +36,10 @@ pre {
 
 .explanation p:last-child {
   margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }

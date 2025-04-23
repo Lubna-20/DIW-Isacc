@@ -4,196 +4,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios jQuery (II)</title>
-  <link rel="stylesheet" href="../../Utils/css/general.css">
-  <link rel="stylesheet" href="soluciones/estilos_generales.css">
-
-  <script src="../jquery-3.7.1.min.js"></script>
-
+  <title>Ejercicios jQuery (III). Enunciados</title>
+  <!-- Personalizados para highlight.js -->
+  <link rel="stylesheet" href="../../Utils/highlightjs/highlight.css">
   <!-- Tema CSS para highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 135px;
-    }
-
-    #container {
-      display: block !important;
-    }
-
-    .exercise h3 {
-      border-bottom: 3px solid transparent;
-      transition: border-bottom 0.3s ease;
-    }
-
-    .exercise:hover h3 {
-      border-bottom: 3px solid #007bff;
-    }
-
-    p {
-      margin-block: 0.5em;
-    }
-
-    .exercise {
-      margin-bottom: 1.5em;
-    }
-
-    .solution {
-      display: none;
-      background-color: #f9f9f9;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    #header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      background-color: #e5e4c5;
-    }
-
-    #navbar {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #343a40;
-      padding: 3px;
-      font-size: 0.875em;
-    }
-
-    #navbar a {
-      text-decoration: none;
-      color: #ffffff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    #navbar a:hover {
-      background-color: #007bff;
-      text-decoration: none;
-    }
-
-    img.img-ejercicio {
-      margin: 10px auto;
-      display: block;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+  <link rel="stylesheet" href="../../Utils/highlightjs/night-owl.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../../Utils/Bootstrap/bootstrap.css">
+  <!-- Estilos generales para 5.5. Ejercicios jQuery (III) -->
+  <link rel="stylesheet" href="css/estilos_generales.css">
 </head>
 
-<body>
-  <div id="header">
-    <h1>Ejercicios jQuery (III)</h1>
-    <div id="navbar">
-      <a href="#ejercicio1">Ej.1</a>
-      <a href="#ejercicio2">Ej.2</a>
-      <a href="#ejercicio3">Ej.3</a>
-      <a href="#ejercicio4">Ej.4</a>
-      <a href="#ejercicio5">Ej.5</a>
-      <a href="#ejercicio6">Ej.6</a>
-      <a href="#ejercicio7">Ej.7</a>
-      <a href="#ejercicio8">Ej.8</a>
-      <a href="#ejercicio9">Ej.9</a>
-      <a href="#ejercicio10">Ej.10</a>
-      <a href="#ejercicio11">Ej.11</a>
-      <a href="#ejercicio12">Ej.12</a>
-      <a href="#ejercicio13">Ej.13</a>
-      <a href="#ejercicio14">Ej.14</a>
-      <a href="#ejercicio15">Ej.15</a>
-      <a href="#ejercicio16">Ej.16</a>
-      <a href="#ejercicio17">Ej.17</a>
-      <a href="#ejercicio18">Ej.18</a>
+<body class="bg-secondary-subtle" data-bs-spy="scroll" data-bs-target="#navbar-side" data-bs-smooth-scroll="true">
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" data-bs-theme="dark">
+
+    <div class="container-xl">
+
+      <div>
+        <a class="navbar-brand me-1" href="./" title="Subir">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+          </svg>
+        </a>
+
+        <span class="navbar-brand">Ejercicios jQuery (III). Enunciados</span>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="navbar-nav d-flex flex-wrap flex-row">
+          <a class="nav-link px-2" href="#ejercicio1">1</a>
+          <a class="nav-link px-2" href="#ejercicio2">2</a>
+          <a class="nav-link px-2" href="#ejercicio3">3</a>
+          <a class="nav-link px-2" href="#ejercicio4">4</a>
+          <a class="nav-link px-2" href="#ejercicio5">5</a>
+          <a class="nav-link px-2" href="#ejercicio6">6</a>
+          <a class="nav-link px-2" href="#ejercicio7">7</a>
+          <a class="nav-link px-2" href="#ejercicio8">8</a>
+          <a class="nav-link px-2" href="#ejercicio9">9</a>
+          <a class="nav-link px-2" href="#ejercicio10">10</a>
+          <a class="nav-link px-2" href="#ejercicio11">11</a>
+          <a class="nav-link px-2" href="#ejercicio12">12</a>
+          <a class="nav-link px-2" href="#ejercicio13">13</a>
+          <a class="nav-link px-2" href="#ejercicio14">14</a>
+          <a class="nav-link px-2" href="#ejercicio15">15</a>
+          <a class="nav-link px-2" href="#ejercicio16">16</a>
+          <a class="nav-link px-2" href="#ejercicio17">17</a>
+          <a class="nav-link px-2" href="#ejercicio18">18</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
 
-  <div id="container">
-    <!-- Ejercicio 1 -->
-    <div class="exercise">
-      <h3 id="ejercicio1">Ejercicio 1</h3>
-      <p>Los siguientes campos numéricos representan la temperatura en grados centígrados y celsius. Con jQuery, consigue que cuando se modifique el valor de cualquiera de los inputs, el valor del otro se calcule automáticamente. Las fórmulas de conversión son: <code>°F = (°C x 9/5) + 32</code> y <code>°C = (°F - 32) x 5/9</code></p>
+  <div id="grid-container" class="container-xl">
 
-      <pre><code class="language-html">&lt;label for=&quot;celsius&quot;&gt;Grados Celsius:&lt;/label&gt;
+    <main class="mt-4">
+      <!-- NOTE: Ejercicio 1 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio1" class="border-bottom border-primary border-3 pb-2">Ejercicio 1</h3>
+        <p class="mb-0">Los siguientes campos numéricos representan la temperatura en grados celsius y fahrenheit. Con jQuery, consigue que cuando se modifique el valor de cualquiera de los inputs, el valor del otro se calcule automáticamente. Si se introduce en cualquiera de los inputs un valor no numérico, el otro input se limpiará. Las fórmulas de conversión son:</p>
+        <p class="my-1"><code>°F = (°C x 9/5) + 32</code></p>
+        <p class="my-0"><code>°C = (°F - 32) x 5/9</code></p>
+
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;label for=&quot;celsius&quot;&gt;Grados Celsius:&lt;/label&gt;
 &lt;input type=&quot;number&quot; id=&quot;celsius&quot;&gt;
 &lt;br&gt;
 &lt;label for=&quot;fahrenheit&quot;&gt;Grados Fahrenheit:&lt;/label&gt;
 &lt;input type=&quot;number&quot; id=&quot;fahrenheit&quot;&gt;</code></pre>
-    </div>
+        </div>
 
-    <!-- Ejercicio 2 -->
-    <div class="exercise">
-      <h3 id="ejercicio2">Ejercicio 2</h3>
-      <p>Crea el código jQuery que busque en el siguiente texto todos los elementos <code>&lt;a&gt;</code> que se abren en una nueva ventana y los ponga de color rojo.</p>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-01.html">Solución</a>
+      </div>
 
-      <blockquote><i>Lorem ipsum, dolor sit amet consectetur adipisicing <a href="https://www.google.com/" target="_blank">elit</a>. Quasi <a href="https://www.educarex.es/">ratione</a> voluptatem obcaecati, dolorum quod laudantium similique magnam nam sed dolorem <a href="https://profex.educarex.es/" target="_blank">laborum</a> esse, exercitationem fugiat quae amet ea non! Perferendis, vel.</i></blockquote>
-    </div>
+      <!-- NOTE: Ejercicio 2 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio2" class="border-bottom border-primary border-3 pb-2">Ejercicio 2</h3>
+        <p>Crea el código jQuery que busque en el siguiente texto todos los elementos <code>&lt;a&gt;</code> que
+          se abren en una nueva ventana y los ponga de color rojo.</p>
 
-    <!-- Ejercicio 3 -->
-    <div class="exercise">
-      <h3 id="ejercicio3">Ejercicio 3</h3>
-      <p>Crea el código jQuery que transforme todas las vocales introducidas en un input de tipo texto por la letra <kbd>'i'</kbd>.</p>
-    </div>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="languaje-html">Lorem ipsum, dolor sit amet consectetur adipisicing &lt;a href=&quot;https://www.google.com/&quot; target=&quot;_blank&quot;&gt;elit&lt;/a&gt;. Quasi &lt;a href=&quot;https://www.educarex.es/&quot;&gt;ratione&lt;/a&gt; voluptatem obcaecati, dolorum quod laudantium similique magnam nam sed dolorem &lt;a href=&quot;https://profex.educarex.es/&quot; target=&quot;_blank&quot;&gt;laborum&lt;/a&gt; esse, exercitationem fugiat quae amet ea non! Perferendis, vel.</code></pre>
+        </div>
 
-    <!-- Ejercicio 4 -->
-    <div class="exercise">
-      <h3 id="ejercicio4">Ejercicio 4</h3>
-      <p>Crea el código jQuery para que cuando cualquier elemento de un formulario reciba el foco, todo el formulario obtenga un borde redondeado de color gris y una sombra. Cuando el formulario pierda el foco desaparecerá el borde y la sombra.</p>
-    </div>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-02.html">Solución</a>
+      </div>
 
-    <!-- Ejercicio 5 -->
-    <div class="exercise">
-      <h3 id="ejercicio5">Ejercicio 5</h3>
-      <p>Crea el código jQuery que compruebe la validez de un formulario de login. En el momento en que se pulse la tecla <kbd>Enter</kbd> en cualquiera de los inputs, se comprobará si ambos no están vacíos. Si alguno lo está, creará y mostrará dinámicamente un mensaje de aviso al usuario y pondrá un outline rojo al elemento vacío. Si cualquiera de los dos elementos tiene el outline cuando recibe el foco, este se elimina.</p>
-    </div>
+      <!-- NOTE: Ejercicio 3 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio3" class="border-bottom border-primary border-3 pb-2">Ejercicio 3</h3>
+        <p>Crea el código jQuery que transforme todas las vocales introducidas en un input de tipo texto por la letra <kbd>i</kbd>. Hazlo con todos los eventos que se te ocurran.</p>
 
-    <!-- Ejercicio 6 -->
-    <div class="exercise">
-      <h3 id="ejercicio6">Ejercicio 6</h3>
-      <p>Crea el código jQuery para que un input de tipo numérico solo pueda recibir números binarios, evitando la escritura de cualquier otro carácter distinto a <kbd>'0'</kbd> y <kbd>'1'</kbd>. Cuando se actualice el valor de ese input, aparecerá debajo el número correspondiente en decimal.</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;label for=&quot;texto&quot;&gt;Escribe algo:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;texto&quot; name=&quot;texto&quot;&gt;</code></pre>
+        </div>
 
-    </div>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-03.html">Solución</a>
+      </div>
 
-    <!-- Ejercicio 7 -->
-    <div class="exercise">
-      <h3 id="ejercicio7">Ejercicio 7</h3>
-      <p>Crea el código jQuery que compruebe si el valor introducido en un input de texto es una IPv4 válida.</p>
-    </div>
+      <!-- NOTE: Ejercicio 4 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio4" class="border-bottom border-primary border-3 pb-2">Ejercicio 4</h3>
+        <p>Crea el código jQuery para que cuando cualquier elemento de un formulario reciba el foco, todo el
+          formulario obtenga un borde redondeado de color gris y una sombra. Cuando el formulario pierda el foco
+          desaparecerá el borde y la sombra. Puedes usar este HTML y CSS de ejemplo.</p>
 
-    <!-- Ejercicio 8 -->
-    <div class="exercise">
-      <h3 id="ejercicio8">Ejercicio 8</h3>
-      <p>Crea el código jQuery que modifique el color del texto de un párrafo entre rojo, verde y azul a partir de 3 checkboxes.</p>
-    </div>
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;nombre&quot;&gt;Nombre:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; placeholder=&quot;Lorem ipsum&quot; required&gt;
 
-    <!-- Ejercicio 9 -->
-    <div class="exercise">
-      <h3 id="ejercicio9">Ejercicio 9</h3>
-      <p>Con jQuery, modifica el valor de los span de la frase en función del radiobutton seleccionado de cada grupo. Además, cada modificación de un span se hará con una animación fadeIn y fadeOut.</p>
+  &lt;label for=&quot;categoria&quot;&gt;Categoría:&lt;/label&gt;
+  &lt;select id=&quot;categoria&quot; name=&quot;categoria&quot;&gt;
+    &lt;option value=&quot;opcion1&quot;&gt;Lorem&lt;/option&gt;
+    &lt;option value=&quot;opcion2&quot;&gt;Ipsum&lt;/option&gt;
+    &lt;option value=&quot;opcion3&quot;&gt;Dolor&lt;/option&gt;
+  &lt;/select&gt;
 
-      <p><u>HTML</u>:</p>
-      <pre><code class="language-html">&lt;div id=&quot;radio-container&quot;&gt;
+  &lt;label for=&quot;mensaje&quot;&gt;Mensaje:&lt;/label&gt;
+  &lt;textarea id=&quot;mensaje&quot; name=&quot;mensaje&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">form {
+  max-width: 400px;
+  margin: 0px auto;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input, select, textarea {
+  width: 100%;
+}</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-04.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 5 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio5" class="border-bottom border-primary border-3 pb-2">Ejercicio 5</h3>
+        <p>Crea el código jQuery que compruebe la validez de un formulario de login. En el momento en que se
+          pulse la tecla <kbd>Enter</kbd> en cualquiera de los inputs, se comprobará si están vacíos. Si alguno
+          lo está, creará y mostrará dinámicamente un mensaje de aviso al usuario con un efecto fade y pondrá un
+          outline rojo al elemento vacío. Cuando cualquiera de los dos elementos reciba el foco, se eliminará el
+          outline de ese elemento y se eliminará el mensaje de error, si existiera.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;form id=&quot;miFormulario&quot; class=&quot;my-2&quot;&gt;
+  &lt;label for=&quot;usuario&quot;&gt;Usuario:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;usuario&quot; name=&quot;usuario&quot;&gt;
+  &lt;label for=&quot;password&quot;&gt;Contraseña:&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
+  &lt;div id=&quot;mensaje-error&quot; style=&quot;color: red;&quot;&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-05.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 6 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio6" class="border-bottom border-primary border-3 pb-2">Ejercicio 6</h3>
+        <p>A partir del siguiente HTML, crea el código jQuery que muestre en el <code>div#texto</code> el momento temporal en que se capturan cada uno de los siguientes eventos disparados en el input: <code>keyup</code>, <code>keydown</code>, <code>input</code> y <code>change</code>.
+        </p>
+        <p>Puedes usar el siguiente código para obtener la marca temporal:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-javascript">let marcaTemporal = new Date().toLocaleString();</code></pre>
+        </div>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+&lt;input type=&quot;button&quot; id=&quot;btnLimpiar&quot; value=&quot;Limpiar div&quot;&gt;
+&lt;div id=&quot;texto&quot;&gt;&lt;/div&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">#texto {
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: lightgrey;
+  border: 1px solid darkgrey;
+  padding: 1em;
+}</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-06.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 7 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio7" class="border-bottom border-primary border-3 pb-2">Ejercicio 7</h3>
+        <p>Crea el código jQuery que compruebe si el valor introducido en un input de texto es una IPv4 válida.</p>
+
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="languaje-html">&lt;label for=&quot;inputIP&quot;&gt;Introduce una dirección IPv4:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;inputIP&quot; placeholder=&quot;Ej: 192.168.1.1&quot;&gt;
+&lt;button id=&quot;validarIP&quot;&gt;Validar IP&lt;/button&gt;
+&lt;div id=&quot;resultado&quot; class=&quot;resultado&quot;&gt;&lt;/div&gt;</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-07.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 8 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio8" class="border-bottom border-primary border-3 pb-2">Ejercicio 8</h3>
+        <p>Crea el código jQuery que modifique el color del texto de un párrafo entre rojo, verde y azul a
+          partir de 3 checkboxes.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;red&quot;&gt; Rojo&lt;/label&gt;
+&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;green&quot;&gt; Verde&lt;/label&gt;
+&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;blue&quot;&gt; Azul&lt;/label&gt;</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-08.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 9 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio9" class="border-bottom border-primary border-3 pb-2">Ejercicio 9</h3>
+        <p>Con jQuery, modifica el valor de los span de la frase en función del radiobutton seleccionado de cada
+          grupo. Además, cada modificación de un span se hará con una animación fadeIn y fadeOut.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div id=&quot;radio-container&quot;&gt;
   &lt;div id=&quot;grupo1&quot;&gt;
     &lt;p&gt;Grupo 1:&lt;/p&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;inteligente&quot;&gt; Inteligente&lt;/label&gt;&lt;br&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;ingenioso&quot;&gt; Ingenioso&lt;/label&gt;&lt;br&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo1&quot; value=&quot;brillante&quot;&gt; Brillante&lt;/label&gt;
   &lt;/div&gt;
-
+  
   &lt;div id=&quot;grupo2&quot;&gt;
     &lt;p&gt;Grupo 2:&lt;/p&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;simpático&quot;&gt; Simpático&lt;/label&gt;&lt;br&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;gracioso&quot;&gt; Gracioso&lt;/label&gt;&lt;br&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo2&quot; value=&quot;sociable&quot;&gt; Sociable&lt;/label&gt;
   &lt;/div&gt;
-
+  
   &lt;div id=&quot;grupo3&quot;&gt;
     &lt;p&gt;Grupo 3:&lt;/p&gt;
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo3&quot; value=&quot;atractivo&quot;&gt; Atractivo&lt;/label&gt;&lt;br&gt;
@@ -201,14 +268,16 @@
     &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;grupo3&quot; value=&quot;guapo&quot;&gt; Guapo&lt;/label&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-
+  
 &lt;p class=&quot;frase&quot;&gt;Mi profe de DIW es &lt;span&gt;______&lt;/span&gt;, &lt;span&gt;______&lt;/span&gt; y &lt;span&gt;______&lt;/span&gt;.&lt;/p&gt;</code></pre>
+        </div>
 
-      <p><u>CSS</u>:</p>
-      <pre><code class="language-css">#radio-container {
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">#radio-container {
   display: flex;
 }
-
+  
 #radio-container&gt;* {
   flex-grow: 1;
   margin-block: 10px;
@@ -231,98 +300,522 @@
   color: #fff;
 }
 
-.frase span:nth-child(1) {
-  background-color: #3498DB;
+.frase span:nth-child(1) { background-color: #3498DB; }
+.frase span:nth-child(2) { background-color: #ca2917; }
+.frase span:nth-child(3) { background-color: #0c9846; }</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-09.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 10 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio10" class="border-bottom border-primary border-3 pb-2">Ejercicio 10</h3>
+        <p>Crea el código jQuery necesario para que cuando el usuario seleccione uno de los dos radiobuttons, se aplique la clase correspondiente al párrafo de ejemplo. Usa las clases de Bootstrap <code>alert-danger</code> y <code>alert-success</code>.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;alerta&quot; value=&quot;danger&quot;&gt; Danger&lt;/label&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;alerta&quot; value=&quot;success&quot;&gt; Success&lt;/label&gt;
+&lt;/div&gt;
+  
+&lt;p class=&quot;alert&quot;&gt;Este párrafo cambiará su estilo según el radiobutton seleccionado&lt;/p&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">.alert {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
-.frase span:nth-child(2) {
-  background-color: #ca2917;
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
 
-.frase span:nth-child(3) {
-  background-color: #0c9846;
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }</code></pre>
-    </div>
+        </div>
 
-    <!-- Ejercicio 10 -->
-    <div class="exercise">
-      <h3 id="ejercicio10">Ejercicio 10</h3>
-      <p></p>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-10.html">Solución</a>
+      </div>
 
+      <!-- NOTE: Ejercicio 11 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio11" class="border-bottom border-primary border-3 pb-2">Ejercicio 11</h3>
+        <p>Crea el código jQuery que gestione la habilitación/deshabilitación de un grupo de checkboxes. Cuando el checkbox "Seleccionar todos" esté marcado, todos los checkboxes de la lista se marcarán y deshabilitarán. Al desmarcarlo, se habilitarán de nuevo y se desmarcarán todos.</p>
 
-    </div>
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div class=&quot;checkbox-group&quot;&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;selectAll&quot;&gt; Seleccionar todos
+  &lt;/label&gt;
+  
+  &lt;div class=&quot;options&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;option&quot;&gt; Opción 1&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;option&quot;&gt; Opción 2&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;option&quot;&gt; Opción 3&lt;/label&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;option&quot;&gt; Opción 4&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
 
-    <!-- Ejercicio 11 -->
-    <div class="exercise">
-      <h3 id="ejercicio11">Ejercicio 11</h3>
-      <p></p>
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">.checkbox-group {
+  border: 1px solid #ccc;
+  padding: 15px;
+  max-width: 300px;
+}
 
+.options {
+  margin-top: 10px;
+  padding-left: 20px;
+}
 
-    </div>
+.options label {
+  display: block;
+  margin: 5px 0;
+}</code></pre>
+        </div>
 
-    <!-- Ejercicio 12 -->
-    <div class="exercise">
-      <h3 id="ejercicio12">Ejercicio 12</h3>
-      <p></p>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-11.html">Solución</a>
+      </div>
 
+      <!-- NOTE: Ejercicio 12 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio12" class="border-bottom border-primary border-3 pb-2">Ejercicio 12</h3>
+        <p>Crea el código jQuery que permita al usuario cambiar las propiedades de un elemento mediante botones de control. Los botones permitirán:</p>
+        <ul>
+          <li>12.1. Cambiar el texto del elemento entre dos opciones que se definirán en dos inputs de texto.</li>
+          <li>12.2. Añadir/quitar un título descriptivo (atributo <code>title</code>).</li>
+          <li>12.3. Hacer el elemento responsive (añadir/quitar una clase "responsive").</li>
+        </ul>
 
-    </div>
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div class="control-panel"&gt;
+  &lt;div id="controlledElement" class="display-element"&gt;
+    Lorem ipsum
+  &lt;/div&gt;
+  
+  &lt;div class="inputs-container"&gt;
+    &lt;label for="texto1"&gt;Texto 1:&lt;/label&gt;
+    &lt;input type="text" id="texto1" value="Lorem ipsum"&gt;
+    
+    &lt;label for="texto2"&gt;Texto 2:&lt;/label&gt;
+    &lt;input type="text" id="texto2" value="Dolor sit amet"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="controls"&gt;
+    &lt;button id="changeText"&gt;Cambiar texto&lt;/button&gt;
+    &lt;button id="toggleTitle"&gt;Añadir/quitar título&lt;/button&gt;
+    &lt;button id="toggleResponsive"&gt;Hacer responsive&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
 
-    <!-- Ejercicio 13 -->
-    <div class="exercise">
-      <h3 id="ejercicio13">Ejercicio 13</h3>
-      <p></p>
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">.control-panel {
+  margin: 20px 0;
+  text-align: center;
+}
 
+.inputs-container {
+  margin: 15px 0;
+}
 
-    </div>
+.inputs-container input {
+  margin: 0 10px 0 5px;
+}
 
-    <!-- Ejercicio 14 -->
-    <div class="exercise">
-      <h3 id="ejercicio14">Ejercicio 14</h3>
-      <p></p>
+.display-element {
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 
+.controls {
+  margin-top: 15px;
+}
 
-    </div>
+.controls button {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-    <!-- Ejercicio 15 -->
-    <div class="exercise">
-      <h3 id="ejercicio15">Ejercicio 15</h3>
-      <p></p>
+.controls button:hover {
+  background-color: #45a049;
+}
 
+/* Estilos para los diferentes estados del elemento */
+.display-element.responsive {
+  width: 100%;
+}</code></pre>
+        </div>
 
-    </div>
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-12.html">Solución</a>
+      </div>
 
-    <!-- Ejercicio 16 -->
-    <div class="exercise">
-      <h3 id="ejercicio16">Ejercicio 16</h3>
-      <p></p>
+      <!-- NOTE: Ejercicio 13 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio13" class="border-bottom border-primary border-3 pb-2">Ejercicio 13</h3>
+        <p>Crea el código jQuery que permita insertar alumnos en una lista y clonarlos a otra lista. La funcionalidad completa será la siguiente:</p>
 
+        <ol>
+          <li>Cuando el usuario pulse el botón <code>#btnInsertar</code>, se comprobará que tanto el nombre como los apellidos no están vacíos. Si alguno lo está, mostrará un mensaje de error en <code>#mensaje</code>. Si ambos no están vacíos, insertará en la lista izquierda al alumno ("Nombre" + "Apellidos").</li>
 
-    </div>
+          <li>Si se pulsa sobre un elemento de la lista izquierda que no tenga la clase <code>active</code>, se le aplicará esta clase y se eliminará de los demás elementos.</li>
 
-    <!-- Ejercicio 17 -->
-    <div class="exercise">
-      <h3 id="ejercicio17">Ejercicio 17</h3>
-      <p></p>
+          <li>Si se pulsa sobre un elemento con la clase <code>active</code>, esta clase se eliminará.</li>
 
+          <li>Al pulsar el botón "Clonar", se clonará el elemento con la clase <code>active</code> de la lista izquierda a la lista derecha. El elemento de la lista izquierda quedará marcado con un atributo <code>data-clonable</code> que evitará que pueda ser activado o clonado de nuevo.</li>
 
-    </div>
+          <li>Se mostrará un mensaje tanto si se ha clonado un elemento como si no.</li>
 
-    <!-- Ejercicio 18 -->
-    <div class="exercise">
-      <h3 id="ejercicio18">Ejercicio 18</h3>
-      <p></p>
+          <li>Todos los mensajes en <code>#mensaje</code> irán con el estilo correspondiente en alerts de Bootstrap (<i>danger</i> para mensajes de error, <i>success</i> para mensajes de éxito).</li>
+        </ol>
 
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div class=&quot;container-selection&quot;&gt;
+  &lt;div class=&quot;list-container&quot;&gt;
+    &lt;h4&gt;Lista de personas&lt;/h4&gt;
+    &lt;ul id=&quot;personasList&quot;&gt;
+      &lt;li&gt;Ana García Pérez&lt;/li&gt;
+      &lt;li&gt;Javier Martínez López&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;btnContainer&quot;&gt;
+    &lt;button id=&quot;btnClonar&quot;&gt;Clonar &rarr;&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;list-container&quot;&gt;
+    &lt;h4&gt;Elementos clonados&lt;/h4&gt;
+    &lt;ul id=&quot;listaClonados&quot;&gt;
+      &lt;!-- Aquí se añadirán los elementos clonados --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
 
-    </div>
-  </div>
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">.container-selection {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-container {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+  min-height: 200px;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+#btnClonar {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  
+#btnClonar:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #e9e9e9;
+}
+
+li.active {
+  background-color: #007bff;
+  color: white;
+}</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-13.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 14 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio14" class="border-bottom border-primary border-3 pb-2">Ejercicio 14</h3>
+        <p>Crea una aplicación web que permita buscar y filtrar viajes utilizando datos obtenidos mediante AJAX desde un archivo JSON. La aplicación deberá tener las siguientes funcionalidades:</p>
+
+        <ol>
+          <li>Al cargar la página, utiliza <code>$.ajax()</code> para obtener los datos de viajes desde el archivo "ej-13-viajes.json" y rellena el <code>select</code> de ciudades de origen.</li>
+
+          <li>El botón de búsqueda debe estar deshabilitado de inicio (con jQuery). Solo debe habilitarse si la carga inicial ha sido exitosa.</li>
+
+          <li>Al pulsar el botón "Buscar", realiza otra llamada AJAX para obtener los datos y filtrarlos con los datos del formulario.</li>
+
+          <li>Todos los mensajes, sean informativos o de error, se deberán mostrar en el div <code>#mensaje</code> con la clase <code>alert</code> correspondiente de Bootstrap, desapareciendo transcurridos 4 segundos.</li>
+
+          <li>Muestra los viajes filtrados en forma de lista numerada. Cada viaje debe mostrar la información tal y como se muestra en la imagen:</li>
+
+          <img src="img/ej-14.png" style="max-width: 750px;" alt="Ejercicio 14" class="w-100 d-block mx-auto my-3 shadow shadow border border-2 rounded">
+        </ol>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;!-- Mensaje para errores y notificaciones --&gt;
+&lt;div id=&quot;mensaje&quot; class=&quot;alert my-3&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;!-- Panel de búsqueda --&gt;
+&lt;form id=&quot;formulario-busqueda&quot; class=&quot;row g-3 mt-2 border border-2 p-2 rounded-2 shadow-sm&quot;&gt;
+  &lt;div class=&quot;col-md-3 mt-0&quot;&gt;
+    &lt;label for=&quot;originCity&quot; class=&quot;form-label&quot;&gt;Origen&lt;/label&gt;
+    &lt;select id=&quot;originCity&quot; name=&quot;originCity&quot; class=&quot;form-select&quot;&gt;
+      &lt;option value=&quot;&quot;&gt;Todos&lt;/option&gt;
+      &lt;!-- Las opciones se cargarán dinámicamente --&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-md-3 mt-0&quot;&gt;
+    &lt;label for=&quot;country&quot; class=&quot;form-label&quot;&gt;País&lt;/label&gt;
+    &lt;select id=&quot;country&quot; name=&quot;country&quot; class=&quot;form-select&quot;&gt;
+      &lt;option value=&quot;&quot;&gt;Todos&lt;/option&gt;
+      &lt;option value=&quot;Alemania&quot;&gt;Alemania&lt;/option&gt;
+      &lt;option value=&quot;Austria&quot;&gt;Austria&lt;/option&gt;
+      &lt;option value=&quot;Croacia&quot;&gt;Croacia&lt;/option&gt;
+      &lt;option value=&quot;Francia&quot;&gt;Francia&lt;/option&gt;
+      &lt;option value=&quot;Grecia&quot;&gt;Grecia&lt;/option&gt;
+      &lt;option value=&quot;Italia&quot;&gt;Italia&lt;/option&gt;
+      &lt;option value=&quot;Países Bajos&quot;&gt;Países Bajos&lt;/option&gt;
+      &lt;option value=&quot;Portugal&quot;&gt;Portugal&lt;/option&gt;
+      &lt;option value=&quot;Reino Unido&quot;&gt;Reino Unido&lt;/option&gt;
+      &lt;option value=&quot;República Checa&quot;&gt;República Checa&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-md-3 mt-0&quot;&gt;
+    &lt;label for=&quot;category&quot; class=&quot;form-label&quot;&gt;Categoría&lt;/label&gt;
+    &lt;select id=&quot;category&quot; name=&quot;category&quot; class=&quot;form-select&quot;&gt;
+      &lt;option value=&quot;&quot;&gt;Todas&lt;/option&gt;
+      &lt;option value=&quot;Aventura&quot;&gt;Aventura&lt;/option&gt;
+      &lt;option value=&quot;Cultural&quot;&gt;Cultural&lt;/option&gt;
+      &lt;option value=&quot;Gastronómico&quot;&gt;Gastronómico&lt;/option&gt;
+      &lt;option value=&quot;Playa&quot;&gt;Playa&lt;/option&gt;
+      &lt;option value=&quot;Urbano&quot;&gt;Urbano&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-md-3 mt-0 d-flex align-items-end&quot;&gt;
+    &lt;button type=&quot;button&quot; id=&quot;btn-buscar&quot; class=&quot;btn btn-primary px-5&quot;&gt;Buscar&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!-- Resultados --&gt;
+&lt;div class=&quot;mt-4&quot;&gt;
+  &lt;h5 id=&quot;contador-resultados&quot;&gt;Resultados: 0 viajes encontrados&lt;/h5&gt;
+
+  &lt;ol id=&quot;lista-resultados&quot; class=&quot;list-group list-group-numbered mb-3&quot;&gt;
+    &lt;!-- Aquí se cargarán los resultados dinámicamente --&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">#mensaje {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#lista-resultados li:hover {
+  background-color: #f0f0f0;
+}</code></pre>
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-14.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 15 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio15" class="border-bottom border-primary border-3 pb-2">Ejercicio 15</h3>
+        <p></p>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-15.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 16 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio16" class="border-bottom border-primary border-3 pb-2">Ejercicio 16</h3>
+        <p></p>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-16.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 17 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio17" class="border-bottom border-primary border-3 pb-2">Ejercicio 17</h3>
+        <p></p>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-17.html">Solución</a>
+      </div>
+
+      <!-- NOTE: Ejercicio 18 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio18" class="border-bottom border-primary border-3 pb-2">Ejercicio 18</h3>
+        <p></p>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-18.html">Solución</a>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <div class="mt-4 d-none d-lg-block">
+
+      <nav id="navbar-side" class="nav position-sticky align-items-stretch bg-white p-3 rounded shadow-sm">
+        <ul class="pe-2">
+          <li class="nav-item"><a class="active" href="#ejercicio1">Ej. 1</a></li>
+          <li class="nav-item"><a href="#ejercicio2">Ej. 2</a></li>
+          <li class="nav-item"><a href="#ejercicio3">Ej. 3</a></li>
+          <li class="nav-item"><a href="#ejercicio4">Ej. 4</a></li>
+          <li class="nav-item"><a href="#ejercicio5">Ej. 5</a></li>
+          <li class="nav-item"><a href="#ejercicio6">Ej. 6</a></li>
+          <li class="nav-item"><a href="#ejercicio7">Ej. 7</a></li>
+          <li class="nav-item"><a href="#ejercicio8">Ej. 8</a></li>
+          <li class="nav-item"><a href="#ejercicio9">Ej. 9</a></li>
+          <li class="nav-item"><a href="#ejercicio10">Ej. 10</a></li>
+          <li class="nav-item"><a href="#ejercicio11">Ej. 11</a></li>
+          <li class="nav-item"><a href="#ejercicio12">Ej. 12</a></li>
+          <li class="nav-item"><a href="#ejercicio13">Ej. 13</a></li>
+          <li class="nav-item"><a href="#ejercicio14">Ej. 14</a></li>
+          <li class="nav-item"><a href="#ejercicio15">Ej. 15</a></li>
+          <li class="nav-item"><a href="#ejercicio16">Ej. 16</a></li>
+          <li class="nav-item"><a href="#ejercicio17">Ej. 17</a></li>
+          <li class="nav-item"><a href="#ejercicio18">Ej. 18</a></li>
+        </ul>
+      </nav>
+    </div> <!-- .mt-4 -->
+  </div> <!-- #grid-container -->
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <p class="text-center">2º Desarrollo de Aplicaciones Web<span class="mx-3">|</span>Diseño de Interfaces Web</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="../../Utils/js/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="../../Utils/Bootstrap/bootstrap.bundle.min.js"></script>
 
   <!-- highlight.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../../Utils/highlightjs/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 
   <!-- Función para copiar el contenido del pre tag -->
   <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+
+  <script>
+    // Script para manejar los clics en los enlaces de navegación lateral
+    document.addEventListener('DOMContentLoaded', function () {
+      // Seleccionar todos los enlaces del navbar lateral
+      const navLinks = document.querySelectorAll('#navbar-side a');
+
+      // Altura de la barra de navegación (usar un valor fijo para asegurar consistencia)
+      const navHeight = 125;
+
+      // Añadir evento click a cada enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          // Prevenir el comportamiento predeterminado del enlace
+          e.preventDefault();
+
+          // Obtener el ID del elemento al que apunta el enlace
+          const targetId = this.getAttribute('href');
+
+          // Obtener el elemento destino
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            // Calcular la posición del elemento
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+            // Realizar el scroll
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            // Actualizar la URL sin causar un nuevo scroll
+            history.pushState(null, '', targetId);
+          }
+        });
+      });
+
+      // Manejar el caso cuando la página carga directamente con un hash en la URL
+      if (window.location.hash) {
+        setTimeout(() => {
+          const targetElement = document.querySelector(window.location.hash);
+          if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+      form {
+        max-width: 400px;
+        margin: 0px auto;
+        padding: 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Lorem ipsum"
+        required
+      />
+
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" name="categoria">
+        <option value="opcion1">Lorem</option>
+        <option value="opcion2">Ipsum</option>
+        <option value="opcion3">Dolor</option>
+      </select>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      //Crea el código jQuery para que cuando cualquier elemento de un formulario
+      // reciba el foco, todo el formulario obtenga un borde redondeado de color gris
+      // y una sombra. Cuando el formulario pierda el foco desaparecerá el borde y la sombra.
+      //Puedes usar este HTML y CSS de ejemplo.
+      $(document).ready(function () {
+        $("form").on("focusin", function () {
+          $(this).css("border", "1px solid red");
+        });
+        $('textarea').on("focus", function(){
+            $(this).css("background", "lightblue");
+        })
+      });
+    </script>
+  </body>
+</html>

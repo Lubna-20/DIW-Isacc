@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+      #texto {
+        margin-top: 10px;
+        font-weight: bold;
+        background-color: lightgrey;
+        border: 1px solid darkgrey;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <input type="button" id="btnLimpiar" value="Limpiar div" />
+    <div id="texto"></div>
+  </body>
+  <script>
+    //A partir del siguiente HTML, crea el código jQuery que muestre en el div#texto el momento temporal en que se capturan
+    //cada uno de los siguientes eventos disparados en el input: keyup, keydown, input y change.
+    $(document).ready(function () {
+      let marcaTemporal = new Date().toLocaleString();
+      $("#input").on("keyup keydown input change", function (e) {
+        $("#texto").append(
+          "<p>Evento:" +event.type+ "-Marca Temporal: " + marcaTemporal + "</p>"
+        );
+        console.log(event);
+      });
+      $('#btnLimpiar').on('click', function(){
+        //empty vacía el contenedor
+        $('#texto').empty();
+      })
+    });
+  </script>
+</html>

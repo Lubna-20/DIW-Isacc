@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <label for="inputIP">Introduce una dirección IPv4:</label>
+    <input
+      type="text"
+      id="inputIP"
+      value="192.168.4.3"
+      placeholder="Ej: 192.168.1.1"
+    />
+    <button id="validarIP">Validar IP</button>
+    <div id="resultado" class="resultado"></div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      //Crea el código jQuery que compruebe si el valor introducido en un input de texto es una IPv4 válida.
+
+      $("#validarIP").on("click", function () {
+        let ip = $("#inputIP").val();
+        console.log(ip);
+        let partes = ip.split(".");
+        console.log(partes);
+        if (partes.length !== 4) {
+          $("#resultado").text("Error , la ip no es valida ");
+        } else{
+            if (){
+
+            }
+        }
+
+
+
+      });
+    });
+  </script>
+</html>

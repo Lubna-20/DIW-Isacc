@@ -23,19 +23,36 @@
 
       $("#validarIP").on("click", function () {
         let ip = $("#inputIP").val();
-        console.log(ip);
         let partes = ip.split(".");
-        console.log(partes);
+        console.log(/^\d+$/.test(partes[0]));
+        console.log(partes[0]);
         if (partes.length !== 4) {
           $("#resultado").text("Error , la ip no es valida ");
-        } else{
-            if (){
-
+        } else {
+          if (
+            /^\d{1,3}$/.test(partes[0]) &&
+            /^\d{1,3}$/.test(partes[1]) &&
+            /^\d{1,3}$/.test(partes[2]) &&
+            /^\d{1,3}$/.test(partes[3])
+          ) {
+            if (
+              parseInt(partes[0]) >= 0 &&
+              parseInt(partes[0]) <= 255 &&
+              parseInt(partes[1]) >= 0 &&
+              parseInt(partes[1]) <= 255 &&
+              parseInt(partes[2]) >= 0 &&
+              parseInt(partes[2]) <= 255 &&
+              parseInt(partes[3]) >= 0 &&
+              parseInt(partes[3]) <= 255
+            ) {
+              $("#resultado").text("La IP es valida");
+            } else {
+              $("#resultado").text("Error , la ip no es valida ");
             }
+          } else {
+            $("#resultado").text("Error , la ip no es valida ");
+          }
         }
-
-
-
       });
     });
   </script>

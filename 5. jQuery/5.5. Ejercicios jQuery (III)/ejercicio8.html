@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <label><input type="radio" name="color" value="red" /> Rojo</label>
+    <label><input type="radio" name="color" value="green" /> Verde</label>
+    <label><input type="radio" name="color" value="blue" /> Azul</label>
+    <p id="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident a
+      tempore earum id ducimus voluptate quod, doloribus atque cum natus
+      blanditiis excepturi modi qui possimus adipisci magnam sunt? Animi,
+      expedita.
+    </p>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("input[type=radio]").change(function () {
+        var color =  $(this).val();
+        $("#parrafo").css("color", color);
+      });
+    });
+  </script>
+</html>

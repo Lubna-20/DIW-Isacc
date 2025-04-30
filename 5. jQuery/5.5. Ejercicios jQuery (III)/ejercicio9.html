@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+      #radio-container {
+        display: flex;
+      }
+
+      #radio-container > * {
+        flex-grow: 1;
+        margin-block: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .frase {
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      .frase span {
+        padding: 4px 8px;
+        font-weight: normal;
+        border-radius: 6px;
+        color: #fff;
+      }
+
+      .frase span:nth-child(1) {
+        background-color: #3498db;
+      }
+      .frase span:nth-child(2) {
+        background-color: #ca2917;
+      }
+      .frase span:nth-child(3) {
+        background-color: #0c9846;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="radio-container">
+      <div id="grupo1">
+        <p>Grupo 1:</p>
+        <label
+          ><input type="radio" name="grupo1" value="inteligente" />
+          Inteligente</label
+        ><br />
+        <label
+          ><input type="radio" name="grupo1" value="ingenioso" />
+          Ingenioso</label
+        ><br />
+        <label
+          ><input type="radio" name="grupo1" value="brillante" />
+          Brillante</label
+        >
+      </div>
+
+      <div id="grupo2">
+        <p>Grupo 2:</p>
+        <label
+          ><input type="radio" name="grupo2" value="simpático" />
+          Simpático</label
+        ><br />
+        <label
+          ><input type="radio" name="grupo2" value="gracioso" /> Gracioso</label
+        ><br />
+        <label
+          ><input type="radio" name="grupo2" value="sociable" /> Sociable</label
+        >
+      </div>
+
+      <div id="grupo3">
+        <p>Grupo 3:</p>
+        <label
+          ><input type="radio" name="grupo3" value="atractivo" />
+          Atractivo</label
+        ><br />
+        <label
+          ><input type="radio" name="grupo3" value="apuesto" /> Apuesto</label
+        ><br />
+        <label><input type="radio" name="grupo3" value="guapo" /> Guapo</label>
+      </div>
+    </div>
+
+    <p class="frase">
+      Mi profe de DIW es <span>______</span>, <span>______</span> y
+      <span>______</span>.
+    </p>
+  </body>
+  <script>
+
+    
+  </script>
+</html>

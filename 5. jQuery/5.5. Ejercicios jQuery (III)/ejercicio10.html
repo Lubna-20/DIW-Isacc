@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <style>
+    .alert {
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+    }
+
+    .alert-danger {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+  </style>
+  <body>
+    <div>
+      <label><input type="radio" name="alerta" value="danger" /> Danger</label>
+      <label
+        ><input type="radio" name="alerta" value="success" /> Success</label
+      >
+    </div>
+
+    <p class="alert">
+      Este párrafo cambiará su estilo según el radiobutton seleccionado
+    </p>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("input[type=radio]").change(function () {
+        var valor = $(this).val();
+        $(".alert").removeClass("alert-success alert-danger");
+        if (valor == "danger") {
+          $(".alert").addClass("alert-danger");
+        }
+        if (valor == "success") {
+          $(".alert").addClass("alert-success");
+        }
+      });
+    });
+  </script>
+</html>

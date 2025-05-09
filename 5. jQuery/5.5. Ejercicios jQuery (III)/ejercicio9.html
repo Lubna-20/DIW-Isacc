@@ -94,7 +94,49 @@
     </p>
   </body>
   <script>
-
-    
+    $(document).ready(function () {
+      //al dar click en un radio button 
+      $("input[type=radio]").on("change", function () {
+        //el valor del radio button
+        //es el valor del atributo value
+        //el nombre del radio button
+        //es el valor del atributo name
+        
+        var grupo = $(this).attr("name");
+        var valor = $(this).val();
+        console.log(grupo + valor);
+        //la condicion es para saber 
+        //en que grupo se ha hecho click
+        //y cambiar el texto del span correspondiente
+        //el span correspondiente es el que tiene el mismo
+        //indice que el grupo
+        //si el grupo es grupo1
+        //el span correspondiente es el primer span
+        //si el grupo es grupo2
+        //el span correspondiente es el segundo span
+        //si el grupo es grupo3
+        //el span correspondiente es el tercer span
+        
+        if (grupo == "grupo1") {
+          $("span:nth-child(1)").fadeOut('slow',function(){
+            $("span:nth-child(1)").text(valor);
+            $("span:nth-child(1)").fadeIn();
+          });
+       
+        }
+        if (grupo == "grupo2") {
+          $("span:nth-child(2)").fadeOut('slow',function(){
+            $("span:nth-child(2)").text(valor);
+            $("span:nth-child(2)").fadeIn();
+          });
+        }
+        if (grupo == "grupo3") {
+          $("span:nth-child(3)").fadeOut('slow',function(){
+            $("span:nth-child(3)").text(valor);
+            $("span:nth-child(3)").fadeIn();
+          });
+        }
+      });
+    });
   </script>
 </html>

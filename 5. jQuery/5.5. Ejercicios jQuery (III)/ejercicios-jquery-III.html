@@ -169,7 +169,7 @@ input, select, textarea {
   &lt;input type=&quot;text&quot; id=&quot;usuario&quot; name=&quot;usuario&quot;&gt;
   &lt;label for=&quot;password&quot;&gt;Contraseña:&lt;/label&gt;
   &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
-  &lt;div id=&quot;mensaje-error&quot; style=&quot;color: red;&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;mensaje-error&quot;&lt;/div&gt;
 &lt;/form&gt;</code></pre>
         </div>
 
@@ -684,7 +684,120 @@ li.active {
       <!-- NOTE: Ejercicio 15 -->
       <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
         <h3 id="ejercicio15" class="border-bottom border-primary border-3 pb-2">Ejercicio 15</h3>
-        <p></p>
+        <p>Crea una aplicación web para buscar y filtrar productos de carritos de compra. La aplicación debe obtener los datos mediante AJAX desde un archivo JSON cuando el usuario realice una búsqueda. Características:</p>
+
+        <ol>
+          <li>La página inicialmente mostrará solo el formulario de búsqueda sin productos.</li>
+          <li>Cuando el usuario haga clic en el botón "Buscar", se realizará una petición AJAX para cargar los datos desde "ej-15.json" y filtrarlos según los criterios seleccionados:
+            <ul>
+              <li>Precio máximo (mediante un slider).</li>
+              <li>Porcentaje mínimo de descuento (mediante un select).</li>
+            </ul>
+          </li>
+          <li>Los resultados de la búsqueda se mostrarán en un diseño de tarjetas atractivo.</li>
+          <li>Cada producto debe mostrar:
+            <ul>
+              <li>Título del producto.</li>
+              <li>Precio.</li>
+              <li>Porcentaje de descuento.</li>
+              <li>Miniatura del producto.</li>
+            </ul>
+          </li>
+          <li>Implementa mensajes informativos utilizando el div #mensaje que desaparezcan automáticamente.</li>
+        </ol>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;!-- Mensaje para errores y notificaciones --&gt;
+&lt;div id=&quot;mensaje&quot; class=&quot;alert my-3&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;!-- Panel de búsqueda --&gt;
+&lt;form id=&quot;formulario-busqueda&quot; class=&quot;row g-3 mt-2 border border-2 p-3 rounded-2 shadow-sm&quot;&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;
+    &lt;label for=&quot;precioMaximo&quot; class=&quot;form-label&quot;&gt;Precio máximo: &lt;span id=&quot;valorPrecio&quot;&gt;0€&lt;/span&gt;&lt;/label&gt;
+    &lt;input type=&quot;range&quot; class=&quot;form-range&quot; id=&quot;precioMaximo&quot; min=&quot;0&quot; max=&quot;50&quot; step=&quot;5&quot; value=&quot;0&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;label for=&quot;descuentoMinimo&quot; class=&quot;form-label&quot;&gt;Descuento mínimo&lt;/label&gt;
+    &lt;select id=&quot;descuentoMinimo&quot; class=&quot;form-select&quot;&gt;
+      &lt;option value=&quot;0&quot; selected&gt;Sin mínimo&lt;/option&gt;
+      &lt;option value=&quot;5&quot;&gt;5% o más&lt;/option&gt;
+      &lt;option value=&quot;10&quot;&gt;10% o más&lt;/option&gt;
+      &lt;option value=&quot;15&quot;&gt;15% o más&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-md-2 d-flex align-items-end&quot;&gt;
+    &lt;button type=&quot;button&quot; id=&quot;btn-buscar&quot; class=&quot;btn btn-primary px-4 w-100&quot;&gt;Buscar&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!-- Resultados --&gt;
+&lt;div class=&quot;mt-4&quot;&gt;
+  &lt;h5 id=&quot;contador-resultados&quot;&gt;Utiliza los filtros y pulse &quot;Buscar&quot; para mostrar productos&lt;/h5&gt;
+
+  &lt;!-- Contenedor para mostrar los productos --&gt;
+  &lt;div id=&quot;resultado-productos&quot; class=&quot;row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-2&quot;&gt;
+    &lt;!-- Aquí se cargarán las tarjetas de los productos dinámicamente --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">#mensaje {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carrito-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.carrito-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.badge-descuento {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}</code></pre>
+        </div>
+
+        <p>Por ejemplo, un resultado real de la búsqueda sería (precio máximo 5€ y descuento mínimo del 15%):</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div id=&quot;resultado-productos&quot; class=&quot;row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-2&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    &lt;div class=&quot;card h-100 carrito-card&quot;&gt;&lt;span class=&quot;badge bg-danger badge-descuento&quot;&gt;-18.69%&lt;/span&gt;&lt;img class=&quot;card-img-top p-3&quot; src=&quot;https://cdn.dummyjson.com/products/images/groceries/Green%20Chili%20Pepper/thumbnail.png&quot; alt=&quot;Green Chili Pepper&quot;&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h5 class=&quot;card-title&quot;&gt;Green Chili Pepper&lt;/h5&gt;
+        &lt;p class=&quot;mb-1&quot;&gt;&lt;span class=&quot;precio-original&quot;&gt;0.99€&lt;/span&gt; &lt;span class=&quot;text-success fw-bold&quot;&gt;0.80€&lt;/span&gt;&lt;/p&gt;
+        &lt;p class=&quot;card-text text-danger&quot;&gt;Descuento: 18.69%&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-footer text-muted&quot;&gt;&lt;small&gt;Cantidad: 3&lt;/small&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    &lt;div class=&quot;card h-100 carrito-card&quot;&gt;&lt;span class=&quot;badge bg-danger badge-descuento&quot;&gt;-16.00%&lt;/span&gt;&lt;img class=&quot;card-img-top p-3&quot; src=&quot;https://cdn.dummyjson.com/products/images/kitchen-accessories/Plate/thumbnail.png&quot; alt=&quot;Plate&quot;&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h5 class=&quot;card-title&quot;&gt;Plate&lt;/h5&gt;
+        &lt;p class=&quot;mb-1&quot;&gt;&lt;span class=&quot;precio-original&quot;&gt;3.99€&lt;/span&gt; &lt;span class=&quot;text-success fw-bold&quot;&gt;3.35€&lt;/span&gt;&lt;/p&gt;
+        &lt;p class=&quot;card-text text-danger&quot;&gt;Descuento: 16.00%&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-footer text-muted&quot;&gt;&lt;small&gt;Cantidad: 2&lt;/small&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
 
         <a class="btn btn-outline-primary" href="soluciones/jquery-ej-15.html">Solución</a>
       </div>
@@ -692,7 +805,77 @@ li.active {
       <!-- NOTE: Ejercicio 16 -->
       <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
         <h3 id="ejercicio16" class="border-bottom border-primary border-3 pb-2">Ejercicio 16</h3>
-        <p></p>
+        <p>Crea el código jQuery para realizar una petición AJAX a un archivo JSON (<code>json/ej-16.json</code>) que contiene un array de estudiantes con sus nombres, apellidos y notas medias. Una vez recibidos los datos, debes mostrarlos en una lista ordenada (<code>&lt;ol&gt;</code>).</p>
+
+        <p>Cada elemento de la lista debe incluir el nombre completo (nombre y apellidos) del alumno y su nota media. Además, dependiendo de la nota, debe aplicarse un estilo diferente:</p>
+        <ul>
+          <li>Si la nota es igual o superior a 9: Color verde y texto "Sobresaliente"</li>
+          <li>Si la nota está entre 7 y 8.9: Color azul y texto "Notable"</li>
+          <li>Si la nota está entre 5 y 6.9: Color naranja y texto "Aprobado"</li>
+          <li>Si la nota es inferior a 5: Color rojo y texto "Suspenso"</li>
+        </ul>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;button id=&quot;btnCargar&quot; class=&quot;btn btn-sm btn-success mb-3&quot;&gt;Cargar Alumnos&lt;/button&gt;
+
+&lt;ol id=&quot;listaAlumnos&quot; class=&quot;list-group list-group-numbered&quot;&gt;
+  &lt;!-- Aquí se cargarán los alumnos dinámicamente --&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">#listaAlumnos {
+  width: 500px;
+}
+
+li.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.nota {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.nota-sobresaliente {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.nota-notable {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.nota-aprobado {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.nota-suspenso {
+  background-color: #f8d7da;
+  color: #721c24;
+}</code></pre>
+        </div>
+
+        <p>Un posible ítem de la lista sería algo así:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;li class=&quot;list-group-item&quot;&gt;
+  &lt;span class=&quot;flex-grow-1 ms-1&quot;&gt;Ana García Martínez&lt;/span&gt;
+  &lt;span class=&quot;nota nota-notable&quot;&gt;8.7 - Notable&lt;/span&gt;
+&lt;/li&gt;</code></pre>
+        </div>
 
         <a class="btn btn-outline-primary" href="soluciones/jquery-ej-16.html">Solución</a>
       </div>
@@ -700,7 +883,45 @@ li.active {
       <!-- NOTE: Ejercicio 17 -->
       <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
         <h3 id="ejercicio17" class="border-bottom border-primary border-3 pb-2">Ejercicio 17</h3>
-        <p></p>
+        <p>Crea el código jQuery para realizar una petición AJAX al archivo JSON del ejercicio anterior (<code>json/ej-16.json</code>). Una vez recibidos los datos, debes mostrarlos en cada uno de los dos contenedores, en función de si han aprobado o han suspendido. Cada elemento de la lista debe incluir el nombre completo (nombre y apellidos) del alumno y su nota media.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div class=&quot;row mt-4&quot;&gt;
+  &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+    &lt;div class=&quot;card shadow-sm&quot;&gt;
+      &lt;div class=&quot;card-header bg-success text-white&quot;&gt;
+        &lt;h5 class=&quot;mb-0&quot;&gt;Aprobados&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;ul id=&quot;lista-aprobados&quot; class=&quot;list-group list-group-flush&quot;&gt;
+          &lt;!-- Aquí se mostrarán los alumnos aprobados --&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+    &lt;div class=&quot;card shadow-sm&quot;&gt;
+      &lt;div class=&quot;card-header bg-danger text-white&quot;&gt;
+        &lt;h5 class=&quot;mb-0&quot;&gt;Suspendidos&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;ul id=&quot;lista-suspendidos&quot; class=&quot;list-group list-group-flush&quot;&gt;
+          &lt;!-- Aquí se mostrarán los alumnos suspendidos --&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <p>Un posible ítem de la lista sería algo así:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;li class=&quot;list-group-item d-flex justify-content-between align-items-center&quot;&gt;
+  &lt;span&gt;Ana García Martínez&lt;/span&gt;
+  &lt;span class=&quot;badge rounded-pill bg-success&quot;&gt;8.7&lt;/span&gt;
+&lt;/li&gt;</code></pre>
+        </div>
 
         <a class="btn btn-outline-primary" href="soluciones/jquery-ej-17.html">Solución</a>
       </div>
@@ -708,7 +929,14 @@ li.active {
       <!-- NOTE: Ejercicio 18 -->
       <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
         <h3 id="ejercicio18" class="border-bottom border-primary border-3 pb-2">Ejercicio 18</h3>
-        <p></p>
+        <p>Crea el código jQuery para realizar una petición AJAX al archivo JSON <code>json/ej-18.json</code>. Una vez recibidos los datos, debes mostrarlos con dos listas anidadas. En la primera lista aparecerán los nombres de los alumnos y en la lista de segundo nivel sus notas en cada asignatura.</p>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;div id=&quot;resultados-container&quot; class=&quot;my-3&quot;&gt;
+  &lt;div id=&quot;lista-alumnos&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
 
         <a class="btn btn-outline-primary" href="soluciones/jquery-ej-18.html">Solución</a>
       </div>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana",
+    "apellidos": "García Martínez",
+    "notaMedia": 8.7
+  },
+  {
+    "id": 2,
+    "nombre": "Carlos",
+    "apellidos": "López Sánchez",
+    "notaMedia": 7.3
+  },
+  {
+    "id": 3,
+    "nombre": "Elena",
+    "apellidos": "Rodríguez Pérez",
+    "notaMedia": 9.5
+  },
+  {
+    "id": 4,
+    "nombre": "Miguel",
+    "apellidos": "Fernández Gómez",
+    "notaMedia": 3.8
+  },
+  {
+    "id": 5,
+    "nombre": "Laura",
+    "apellidos": "Martín Díaz",
+    "notaMedia": 5.2
+  },
+  {
+    "id": 6,
+    "nombre": "Javier",
+    "apellidos": "González Ruiz",
+    "notaMedia": 7.9
+  },
+  {
+    "id": 7,
+    "nombre": "Sara",
+    "apellidos": "Navarro Torres",
+    "notaMedia": 9.1
+  },
+  {
+    "id": 8,
+    "nombre": "David",
+    "apellidos": "Moreno Jiménez",
+    "notaMedia": 2.5
+  },
+  {
+    "id": 9,
+    "nombre": "Patricia",
+    "apellidos": "Sanz Vega",
+    "notaMedia": 5.9
+  },
+  {
+    "id": 10,
+    "nombre": "Alejandro",
+    "apellidos": "Ortega Herrera",
+    "notaMedia": 4.6
+  }
+]

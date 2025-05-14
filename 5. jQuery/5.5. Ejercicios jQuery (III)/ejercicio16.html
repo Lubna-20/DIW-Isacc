@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <style>
+    #listaAlumnos {
+      width: 500px;
+    }
+
+    li.list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      padding: 10px 15px;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+    }
+
+    .nota {
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .nota-sobresaliente {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .nota-notable {
+      background-color: #cce5ff;
+      color: #004085;
+    }
+
+    .nota-aprobado {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .nota-suspenso {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+  <body>
+    <button id="btnCargar" class="btn btn-sm btn-success mb-3">
+      Cargar Alumnos
+    </button>
+    <ol id="listaAlumnos" class="list-group list-group-numbered">
+      <!-- Aquí se cargarán los alumnos dinámicamente -->
+    </ol>
+
+    <script>
+      $(document).ready(function () {
+        $("#btnCargar").on("click", function () {
+          $.ajax({
+            url: "json/ej-16.json",
+            dataType: "json",
+            success: function (data) {
+              console.log(data);
+              $("#listaAlumnos").empty();
+              data.forEach((element) => {
+                let li = $("<li>");
+
+                console.log(element.nombre);
+                let spanNombre = $("<span>").text(
+                  element.nombre + " - " + element.apellidos
+                );
+                let spanNota = $("<span>").text(element.notaMedia);
+                li.append(spanNombre);
+                li.append(spanNota);
+                $("#listaAlumnos").append(li);
+
+                if (element.notaMedia < 5) {
+                  console.log(li);
+                  spanNota.addClass("nota nota-suspenso");
+                  spanNota.text(element.notaMedia + "-SUSPENSO");
+                }
+                if (element.notaMedia >= 5 && element.notaMedia < 6.9) {
+                  console.log(li);
+                  spanNota.addClass("nota nota-aprobado");
+                  spanNota.text(element.notaMedia + "-APROBADO");
+                }
+                if (element.notaMedia >= 7 && element.notaMedia <= 8.9) {
+                  console.log(li);
+                  spanNota.addClass("nota nota-notable");
+                  spanNota.text(element.notaMedia + "-NOTABLE");
+                }
+                if (element.notaMedia > 9) {
+                  console.log(li);
+                  spanNota.addClass("nota nota-sobresaliente");
+                  spanNota.text(element.notaMedia + "-SOBRESALIENTE");
+                }
+              });
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

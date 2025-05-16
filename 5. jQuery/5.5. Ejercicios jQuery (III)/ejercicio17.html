@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div class="row mt-4">
+      <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Aprobados</h5>
+          </div>
+          <div class="card-body">
+            <ul id="lista-aprobados" class="list-group list-group-flush">
+              <!-- Aquí se mostrarán los alumnos aprobados -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-header bg-danger text-white">
+            <h5 class="mb-0">Suspendidos</h5>
+          </div>
+          <div class="card-body">
+            <ul id="lista-suspendidos" class="list-group list-group-flush">
+              <!-- Aquí se mostrarán los alumnos suspendidos -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "json/ej-16.json",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            data.forEach((element) => {
+              let li = $("<li>");
+              console.log(element.nombre);
+              let spanNombre = $("<span>").text(
+                element.nombre + " - " + element.apellidos
+              );
+              let spanNota = $("<span>").text(element.notaMedia);
+                li.append(spanNombre);
+                li.append(spanNota);
+
+                if (element.notaMedia < 5) {
+                    $("#lista-suspendidos").append(li);
+                }else{
+                    $("#lista-aprobados").append(li);
+                }
+               
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

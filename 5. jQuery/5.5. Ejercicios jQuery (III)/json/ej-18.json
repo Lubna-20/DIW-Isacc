@@ -2,81 +2,81 @@
   {
     "id": 1,
     "nombre": "Laura Martínez",
-    "asignaturas": {
-      "Matemáticas": 8,
-      "Lengua": 8
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 8 },
+      { "nombre": "Lengua", "nota": 8 }
+    ]
   },
   {
     "id": 2,
     "nombre": "Carlos Rodríguez",
-    "asignaturas": {
-      "Matemáticas": 9,
-      "Lengua": 7
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 9 },
+      { "nombre": "Lengua", "nota": 7 }
+    ]
   },
   {
     "id": 3,
     "nombre": "Marta Sánchez",
-    "asignaturas": {
-      "Matemáticas": 6,
-      "Lengua": 7
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 6 },
+      { "nombre": "Lengua", "nota": 7 }
+    ]
   },
   {
     "id": 4,
     "nombre": "Javier López",
-    "asignaturas": {
-      "Matemáticas": 9,
-      "Lengua": 9
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 9 },
+      { "nombre": "Lengua", "nota": 9 }
+    ]
   },
   {
     "id": 5,
     "nombre": "Elena García",
-    "asignaturas": {
-      "Matemáticas": 5,
-      "Lengua": 4
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 5 },
+      { "nombre": "Lengua", "nota": 4 }
+    ]
   },
   {
     "id": 6,
     "nombre": "Miguel Fernández",
-    "asignaturas": {
-      "Matemáticas": 7,
-      "Lengua": 4
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 7 },
+      { "nombre": "Lengua", "nota": 4 }
+    ]
   },
   {
     "id": 7,
     "nombre": "Sofía Pérez",
-    "asignaturas": {
-      "Matemáticas": 2,
-      "Lengua": 3
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 2 },
+      { "nombre": "Lengua", "nota": 3 }
+    ]
   },
   {
     "id": 8,
     "nombre": "Daniel Gómez",
-    "asignaturas": {
-      "Matemáticas": 6,
-      "Lengua": 3
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 6 },
+      { "nombre": "Lengua", "nota": 3 }
+    ]
   },
   {
     "id": 9,
     "nombre": "Ana Torres",
-    "asignaturas": {
-      "Matemáticas": 4,
-      "Lengua": 9
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 4 },
+      { "nombre": "Lengua", "nota": 9 }
+    ]
   },
   {
     "id": 10,
     "nombre": "Pablo Navarro",
-    "asignaturas": {
-      "Matemáticas": 6,
-      "Lengua": 4
-    }
+    "asignaturas": [
+      { "nombre": "Matemáticas", "nota": 6 },
+      { "nombre": "Lengua", "nota": 4 }
+    ]
   }
 ]

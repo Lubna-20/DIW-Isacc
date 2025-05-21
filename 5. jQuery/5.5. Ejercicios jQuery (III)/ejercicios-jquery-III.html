@@ -56,6 +56,7 @@
           <a class="nav-link px-2" href="#ejercicio16">16</a>
           <a class="nav-link px-2" href="#ejercicio17">17</a>
           <a class="nav-link px-2" href="#ejercicio18">18</a>
+          <a class="nav-link px-2" href="#ejercicio19">19</a>
         </div>
       </div>
     </div>
@@ -941,6 +942,68 @@ li.list-group-item {
         <a class="btn btn-outline-primary" href="soluciones/jquery-ej-18.html">Solución</a>
       </div>
 
+      <!-- NOTE: Ejercicio 19 -->
+      <div class="exercise mb-4 bg-white p-4 rounded shadow-sm">
+        <h3 id="ejercicio19" class="border-bottom border-primary border-3 pb-2">Ejercicio 19</h3>
+        <p>Crea el código jQuery para realizar una petición AJAX al cargar la página al archivo JSON <code>json/ej-19.json</code> que contiene información sobre coches. La aplicación debe funcionar así:</p>
+        <ol>
+          <li>Al cargar la página, se realizará una petición AJAX para obtener los datos del archivo JSON.</li>
+          <li>Con los datos recibidos, se extraerán las marcas de coches únicas y se generará dinámicamente un checkbox con su correspondiente etiqueta para cada marca en el formulario proporcionado.</li>
+          <li>Si el archivo JSON está vacío o no contiene datos, se mostrará un mensaje de error en el área de resultados.</li>
+          <li>El botón "Ver coches" debe permanecer deshabilitado hasta que se reciban correctamente los datos de la primera petición AJAX.</li>
+          <li>Cuando el usuario seleccione una o varias marcas y pulse el botón "Ver coches", se realizará una nueva petición AJAX al mismo archivo JSON. Se filtrarán los coches según las marcas seleccionadas por el usuario y se mostrarán en el área de resultados, indicando para cada coche: marca, modelo y precio.</li>
+          <li>Si no se ha seleccionado ninguna marca al pulsar el botón, se mostrará un mensaje informativo.</li>
+        </ol>
+
+        <p><u>HTML</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-html">&lt;!-- Formulario --&gt;
+&lt;form id=&quot;formulario-coches&quot; class=&quot;mt-3&quot;&gt;
+  &lt;div class=&quot;mb-3&quot;&gt;
+    &lt;!-- Aquí se añadirán dinámicamente los checkboxes --&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;btn btn-sm btn-success&quot; disabled&gt;Ver coches&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;div id=&quot;resultado&quot; class=&quot;mt-4&quot;&gt;
+  &lt;!-- Aquí se mostrarán los coches filtrados --&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <p><u>CSS</u>:</p>
+        <div class="bg-body-secondary p-3 rounded my-3">
+          <pre><code class="language-css">/* Estilos para formulario de coches */
+.form-check {
+  margin-bottom: 8px;
+}
+
+.marca-coche {
+  font-weight: 500;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.modelo-coche {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+#resultado {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+#resultado p {
+  margin: 0;
+}</code></pre>
+
+        </div>
+
+        <a class="btn btn-outline-primary" href="soluciones/jquery-ej-19.html">Solución</a>
+      </div>
+
     </main>
 
     <!-- Sidebar -->
@@ -966,6 +1029,7 @@ li.list-group-item {
           <li class="nav-item"><a href="#ejercicio16">Ej. 16</a></li>
           <li class="nav-item"><a href="#ejercicio17">Ej. 17</a></li>
           <li class="nav-item"><a href="#ejercicio18">Ej. 18</a></li>
+          <li class="nav-item"><a href="#ejercicio19">Ej. 19</a></li>
         </ul>
       </nav>
     </div> <!-- .mt-4 -->

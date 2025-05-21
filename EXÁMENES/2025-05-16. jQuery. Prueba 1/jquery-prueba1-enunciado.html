@@ -137,19 +137,15 @@
           let p = $("<p>");
           $("#notification-area").prepend(p);
           if ($(this).is(":checked")) {
-            p.append("HAS SELECCIONADO : " + $(this).data('hobby'));
-
-            p.attr('data' , $(this).data('hobby'));
-
-
+            p.append("HAS SELECCIONADO : " + $(this).data("hobby"));
+            p.attr("data", $(this).data("hobby"));
           }
         });
 
         $("#notification-area").on("click", "p", function () {
           $(this).remove();
-          $('input').removeAttr(":checked");
+          $("input").removeAttr(":checked");
         });
-
       });
     </script>
   </body>

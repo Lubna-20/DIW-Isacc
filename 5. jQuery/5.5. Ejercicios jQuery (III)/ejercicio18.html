@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="resultados-container" class="my-3">
+      <div id="lista-alumnos"></div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "json/ej-18.json",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            let olGeneral = $("<ol>");
+            $("#lista-alumnos").append(olGeneral);
+            data.forEach((alumno) => {
+              let li1 = $("<li>");
+              console.log(alumno.nombre);
+              li1.text(alumno.nombre);
+              olGeneral.append(li1);
+              let ol = $("<ol>");
+              li1.append(ol);
+              alumno.asignaturas.forEach((asigna) => {
+                let li2 = $("<li>");
+                li2.text(asigna.nombre + ":" + asigna.nota);
+                ol.append(li2);
+                console.log(asigna);
+              });
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

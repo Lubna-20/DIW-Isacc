@@ -1,0 +1,74 @@
+[
+  {
+    "marca": "BMW",
+    "modelo": "Serie 3",
+    "cilindrada": 2000,
+    "precio": 45000
+  },
+  {
+    "marca": "BMW",
+    "modelo": "X5",
+    "cilindrada": 3000,
+    "precio": 68000
+  },
+  {
+    "marca": "BMW",
+    "modelo": "Serie 5",
+    "cilindrada": 2500,
+    "precio": 55000
+  },
+  {
+    "marca": "Mercedes",
+    "modelo": "GLE",
+    "cilindrada": 2700,
+    "precio": 75000
+  },
+  {
+    "marca": "Mercedes",
+    "modelo": "AMG GT",
+    "cilindrada": 4000,
+    "precio": 180000
+  },
+  {
+    "marca": "Mercedes",
+    "modelo": "Clase S",
+    "cilindrada": 3500,
+    "precio": 110000
+  },
+  {
+    "marca": "Ferrari",
+    "modelo": "F8 Tributo",
+    "cilindrada": 3900,
+    "precio": 250000
+  },
+  {
+    "marca": "Ferrari",
+    "modelo": "Roma",
+    "cilindrada": 3900,
+    "precio": 220000
+  },
+  {
+    "marca": "Ferrari",
+    "modelo": "SF90 Stradale",
+    "cilindrada": 4000,
+    "precio": 430000
+  },
+  {
+    "marca": "Aston Martin",
+    "modelo": "DBS Superleggera",
+    "cilindrada": 5200,
+    "precio": 310000
+  },
+  {
+    "marca": "Aston Martin",
+    "modelo": "DBX",
+    "cilindrada": 4000,
+    "precio": 210000
+  },
+  {
+    "marca": "Aston Martin",
+    "modelo": "Valkyrie",
+    "cilindrada": 6500,
+    "precio": 2800000
+  }
+]

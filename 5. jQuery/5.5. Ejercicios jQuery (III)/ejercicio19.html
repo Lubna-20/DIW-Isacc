@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <script src="../jquery-3.7.1.min.js"></script>
+  </head>
+  <style>
+    /* Estilos para formulario de coches */
+    .form-check {
+      margin-bottom: 8px;
+    }
+
+    .marca-coche {
+      font-weight: 500;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .modelo-coche {
+      margin-left: 20px;
+      margin-bottom: 5px;
+    }
+
+    #resultado {
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    #resultado p {
+      margin: 0;
+    }
+  </style>
+  <body>
+    <!-- Formulario -->
+    <form id="formulario-coches" class="mt-3">
+      <div class="mb-3">
+        <!-- Aquí se añadirán dinámicamente los checkboxes -->
+      </div>
+      <button type="submit" class="btn btn-sm btn-success" disabled>
+        Ver coches
+      </button>
+    </form>
+
+    <div id="resultado" class="mt-4">
+      <!-- Aquí se mostrarán los coches filtrados -->
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "json/ej-19.json",
+          dataType: "json",
+          success: function (data) {
+            let marcas = [];
+            data.forEach((coche) => {
+              if (!marcas.includes(coche.marca)) {
+                marcas.push(coche.marca);
+              }
+            });
+            let indice = 0;
+            marcas.forEach((marca) => {
+              let checkbox = $("<input>");
+
+              checkbox.attr("type", "checkbox");
+              checkbox.attr("id", "marca" + indice);
+              checkbox.attr("name", "marcas");
+
+              let label = $("<label>");
+              label.attr("for", "marca" + indice);
+              label.text(marca);
+              indice++;
+              $("#formulario-coches").append(checkbox);
+              $("#formulario-coches").append(label);
+
+              checkbox.val(marca);
+              $("button").prop("disabled", false);
+            });
+
+            $("button").on("click", function (e) {
+              e.preventDefault();
+              $.ajax({
+                url: "json/ej-19.json",
+                dataType: "json",
+                success: function (coches) {
+                  coches.forEach((coche) => {
+                    $("#resultado").empty();
+                    
+                    if ($("input[name='marcas']:checked").length == 0) {
+                      $("#resultado").text(
+                        "Error no has pulsado en ningun checkbox"
+                      );
+                    } else {
+                      $("input[name='marcas']:checked").each((element) => {
+                        console.log(element)
+                        if (element.val() == coche.marca) {
+                          $("#resultado").text(
+                            coche.marca +
+                              "-" +
+                              coche.modelo +
+                              "-" +
+                              coche.precio
+                          );
+                        }
+                      });
+                    }
+                  });
+                },
+              });
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

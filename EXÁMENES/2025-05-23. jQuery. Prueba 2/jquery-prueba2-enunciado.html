@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2025-05-23. jQuery. Prueba 2</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      #ordenadores {
+        margin-top: 20px;
+      }
+
+      #mensaje {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
+      #mensaje p {
+        margin: 0;
+      }
+
+      button {
+        padding: 8px 16px;
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 15px;
+      }
+
+      button:hover {
+        background-color: #0b7dda;
+      }
+
+      fieldset {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      label {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      #ordenadores li {
+        margin-bottom: 8px;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+      }
+
+      #ordenadores li.oferta {
+        background-color: #ffeb3b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>2025-05-23. jQuery. Prueba 2</h1>
+
+      <h3>
+        Cuando el usuario pulse el botón de cargar componentes, haz una llamada
+        AJAX al archivo <code>json-pr2.json</code>. Cuando recibas los datos haz
+        lo siguiente:
+      </h3>
+
+      <p>
+        <strong>1. </strong> Carga los ordenadores en
+        <code>#ordenadores</code> mediante una lista ordenada. De cada ordenador
+        se mostrará la marca, modelo y precio. <strong>[2 puntos]</strong>
+      </p>
+      <p>
+        <strong>2. </strong> El precio estará en negrita
+        <strong>[0.5 puntos]</strong>
+      </p>
+      <p>
+        <strong>3. </strong> Los ordenadores que estén en oferta tendrán la
+        clase <code>oferta</code> <strong>[0.5 puntos]</strong>
+      </p>
+      <p>
+        <strong>4. </strong> Si no hay ordenadores, muestra un párrafo con el
+        texto en rojo "No hay ordenadores disponibles" en <code>#mensaje</code>.
+        Si hay ordenadores, muestra el párrafo con el texto en azul: "Se han
+        cargado X ordenadores" en <code>#mensaje</code>
+        <strong>[1 punto]</strong>
+      </p>
+      <p>
+        <strong>5. </strong> Si la llamada AJAX falla, muestra un párrafo de
+        error con el texto en rojo en <code>#mensaje</code> borrando los
+        mensajes anteriores que hubiera antes. <strong>[0.5 puntos]</strong>
+      </p>
+      <p>
+        <strong>6. </strong> Cuando termine la llamada, sea satisfactoria o no,
+        muestra un párrafo con el texto en verde "Llamada terminada" en
+        <code>#mensaje</code> sin borrar mensajes anteriores que pudiera haber
+        antes. <strong>[0.5 puntos]</strong>
+      </p>
+      <p>
+        <strong>7. </strong> Si la llamada AJAX es satisfactoria y hay
+        ordenadores, habilita los radiobuttons <strong>[1 punto]</strong>
+      </p>
+      <p>
+        <strong>8. </strong> Filtra los datos obtenidos en función del
+        radiobutton seleccionado. <b>No</b> debes hacer una segunda llamada,
+        solo mostrar u ocultar los elementos necesarios para lograr el
+        comportamiento solicitado. <strong>[4 puntos]</strong>
+      </p>
+
+      <hr />
+
+      <button id="cargar-componentes">Cargar componentes</button>
+
+      <form id="filtro-form">
+        <fieldset>
+          <legend>Filtrar por CPU</legend>
+          <label>
+            <input type="radio" name="cpu" value="Todos" checked disabled />
+            Todos
+          </label>
+          <label>
+            <input type="radio" name="cpu" value="Intel" disabled /> Intel
+          </label>
+          <label>
+            <input type="radio" name="cpu" value="AMD" disabled  /> AMD
+          </label>
+        </fieldset>
+      </form>
+
+      <div id="mensaje">
+        <!-- Los mensajes se añadirán aquí dinámicamente -->
+      </div>
+
+      <div id="ordenadores">
+        <!-- Los ordenadores se añadirán aquí dinámicamente -->
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#cargar-componentes").on("click", function (e) {
+          e.preventDefault();
+          $.ajax({
+            url: "json-pr2.json",
+            dataType: "json",
+            success: function (data) {
+              // Si no hay datos que mostrar, avisamos
+              if (data.ordenadores.length === 0) {
+                let p = $("<p>");
+                $("#mensaje").append(
+                  p
+                    .text("No se han encontrado ordenadores.")
+                    .css("color", "red")
+                );
+                return;
+              } else {
+                let p2 = $("<p>");
+                $("#mensaje").html(
+                  p2
+                    .text(
+                      "Se han cargado : " +
+                        data.ordenadores.length +
+                        " ordenadores"
+                    )
+                    .css("color", "blue")
+                );
+              }
+
+              $('#filtro-form input[type="radio"]').prop("disabled", false);
+
+              console.log(data.ordenadores);
+
+              let olGeneral = $("<ol>");
+              $("#ordenadores").html(olGeneral);
+
+              data.ordenadores.forEach((ordenadores) => {
+                console.log(ordenadores);
+
+                let li = $("<li>");
+
+                olGeneral.append(li);
+                console.log(ordenadores.precio);
+                let precio = $("<strong>").text(ordenadores.precio);
+
+                li.text(ordenadores.marca + " " + ordenadores.modelo + " - ");
+                li.append(precio);
+                if (ordenadores.oferta == true) {
+                  li.addClass("oferta ");
+                }
+
+                const radioSeleccionado = [];
+                $('input[type="radio"]:checked').each(function () {
+                  radioSeleccionado.push($(this).val());
+                  console.log(radioSeleccionado)
+                });
+              });
+            },
+            error: function (xhr, status, error) {
+              let pres = $("<p>");
+              $("#mensaje").html(
+                pres.text("Error al cargar los datos.").css("color", "red")
+              );
+            },
+            complete: function (jqXHR, textStatus) {
+              let pfinal = $("<p>");
+              $("#mensaje").append(
+                pfinal.text("Llamada terminada").css("color", "green")
+              );
+              console.log(jqXHR);
+              console.log(textStatus);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

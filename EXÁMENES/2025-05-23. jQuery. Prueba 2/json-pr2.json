@@ -1,0 +1,244 @@
+{
+  "ordenadores": [
+    {
+      "marca": "Dell",
+      "modelo": "XPS 15",
+      "precio": 1299.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i7-11800H"
+        },
+        "Placa base": {
+          "marca": "Dell",
+          "modelo": "XPS 15 9510"
+        },
+        "Disco duro": {
+          "marca": "Samsung",
+          "modelo": "SSD 970 EVO Plus 1TB"
+        },
+        "RAM": {
+          "marca": "Crucial",
+          "modelo": "16GB DDR4-3200"
+        }
+      }
+    },
+    {
+      "marca": "HP",
+      "modelo": "Pavilion Gaming",
+      "precio": 899.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i5-11400H"
+        },
+        "Placa base": {
+          "marca": "HP",
+          "modelo": "Pavilion Series"
+        },
+        "Disco duro": {
+          "marca": "Seagate",
+          "modelo": "FireCuda 1TB"
+        },
+        "RAM": {
+          "marca": "Corsair",
+          "modelo": "Vengeance 16GB DDR4-3200"
+        }
+      }
+    },
+    {
+      "marca": "Lenovo",
+      "modelo": "Legion 5",
+      "precio": 1099.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "AMD",
+          "modelo": "Ryzen 7 5800H"
+        },
+        "Placa base": {
+          "marca": "Lenovo",
+          "modelo": "Legion B550"
+        },
+        "Disco duro": {
+          "marca": "Seagate",
+          "modelo": "Barracuda 1TB"
+        },
+        "RAM": {
+          "marca": "Corsair",
+          "modelo": "Vengeance 16GB DDR4-3200"
+        }
+      }
+    },
+    {
+      "marca": "ASUS",
+      "modelo": "ROG Strix G15",
+      "precio": 1399.99,
+      "oferta": false,
+      "componentes": {
+        "CPU": {
+          "marca": "AMD",
+          "modelo": "Ryzen 9 5950X"
+        },
+        "Placa base": {
+          "marca": "ASUS",
+          "modelo": "ROG Strix Z590"
+        },
+        "Disco duro": {
+          "marca": "Crucial",
+          "modelo": "P5 Plus 2TB NVMe"
+        },
+        "RAM": {
+          "marca": "G.Skill",
+          "modelo": "Trident Z 32GB DDR4-3600"
+        }
+      }
+    },
+    {
+      "marca": "Acer",
+      "modelo": "Predator Helios 300",
+      "precio": 1199.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i7-11700H"
+        },
+        "Placa base": {
+          "marca": "Acer",
+          "modelo": "Predator Series"
+        },
+        "Disco duro": {
+          "marca": "Intel",
+          "modelo": "660p 1TB NVMe"
+        },
+        "RAM": {
+          "marca": "Samsung",
+          "modelo": "16GB DDR4-3200"
+        }
+      }
+    },
+    {
+      "marca": "MSI",
+      "modelo": "GS66 Stealth",
+      "precio": 1599.99,
+      "oferta": false,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i7-12700H"
+        },
+        "Placa base": {
+          "marca": "MSI",
+          "modelo": "Z690 Gaming Plus"
+        },
+        "Disco duro": {
+          "marca": "Samsung",
+          "modelo": "980 PRO 1TB"
+        },
+        "RAM": {
+          "marca": "Crucial",
+          "modelo": "Ballistix 32GB DDR4-3600"
+        }
+      }
+    },
+    {
+      "marca": "Apple",
+      "modelo": "Mac Mini M1",
+      "precio": 699.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "AMD",
+          "modelo": "Ryzen 5 5600X"
+        },
+        "Placa base": {
+          "marca": "Apple",
+          "modelo": "Logic Board M1"
+        },
+        "Disco duro": {
+          "marca": "Apple",
+          "modelo": "SSD 256GB"
+        },
+        "RAM": {
+          "marca": "Apple",
+          "modelo": "8GB LPDDR4"
+        }
+      }
+    },
+    {
+      "marca": "Alienware",
+      "modelo": "Aurora R13",
+      "precio": 2199.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i9-12900KF"
+        },
+        "Placa base": {
+          "marca": "Dell",
+          "modelo": "Z690 Alienware"
+        },
+        "Disco duro": {
+          "marca": "Western Digital",
+          "modelo": "Black SN850 2TB"
+        },
+        "RAM": {
+          "marca": "HyperX",
+          "modelo": "Fury 64GB DDR5-4800"
+        }
+      }
+    },
+    {
+      "marca": "Razer",
+      "modelo": "Blade 15",
+      "precio": 1899.99,
+      "oferta": false,
+      "componentes": {
+        "CPU": {
+          "marca": "Intel",
+          "modelo": "Core i7-12800H"
+        },
+        "Placa base": {
+          "marca": "Razer",
+          "modelo": "Blade Series"
+        },
+        "Disco duro": {
+          "marca": "Samsung",
+          "modelo": "PM981 1TB"
+        },
+        "RAM": {
+          "marca": "Micron",
+          "modelo": "32GB DDR5-4800"
+        }
+      }
+    },
+    {
+      "marca": "Gigabyte",
+      "modelo": "Aorus 17X",
+      "precio": 2299.99,
+      "oferta": true,
+      "componentes": {
+        "CPU": {
+          "marca": "AMD",
+          "modelo": "Ryzen 9 5900X"
+        },
+        "Placa base": {
+          "marca": "Gigabyte",
+          "modelo": "X670 Aorus Master"
+        },
+        "Disco duro": {
+          "marca": "Sabrent",
+          "modelo": "Rocket 4 Plus 2TB"
+        },
+        "RAM": {
+          "marca": "TeamGroup",
+          "modelo": "T-Force Delta 64GB DDR5-5200"
+        }
+      }
+    }
+  ]
+}
